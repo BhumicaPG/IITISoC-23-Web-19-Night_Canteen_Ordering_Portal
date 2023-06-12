@@ -43,7 +43,7 @@ export default function login(){
                     isSignUp={userisSignUp}
                 />
                 <LoginInput
-                    placeholder={"Email here"}
+                    placeholder={"Password"}
                     icon={<RiLockPasswordFill/>}
                     inputState={password}
                     inputStateFunc={setpassword}
@@ -53,7 +53,7 @@ export default function login(){
 
                 {userisSignUp && (
                         <LoginInput
-                            placeholder={"Confirm Paasword here"}
+                            placeholder={"Confirm Password here"}
                             icon={<RiLockPasswordFill/>}
                             inputState={confirm_password}
                             inputStateFunc={setconfirm_password}
@@ -68,7 +68,7 @@ export default function login(){
                     !userisSignUp ? <p>Doesn't have an account :   
                         <motion.button {...buttonClick} className="text-red-400 font-semibold underline cursor-pointer bg-transparent"
                             onClick={()=>{setuserisSignUp(true)}}
-                        >create One</motion.button></p> : 
+                        >Create One</motion.button></p> : 
                         <p>Already have an account :   
                         <motion.button {...buttonClick} className="text-red-400 font-semibold underline cursor-pointer bg-transparent"
                             onClick={()=>{setuserisSignUp(false)}}

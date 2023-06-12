@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "firebase": "^9.22.2",
+    "vite": "^4.3.9"
+  }
+}
