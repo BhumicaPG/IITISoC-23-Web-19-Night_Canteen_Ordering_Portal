@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import LoginInput from "../components/LoginInput"
 import {motion} from 'framer-motion'
 // need to import logo and background images!!!!!!!!!!!!!!!!!
+// import { LoginBg, Logo } from "../assets/img"
 
 import {HiMail} from "react-icons/hi"
 import {RiLockPasswordFill} from "react-icons/ri"
@@ -97,7 +98,7 @@ export default function login(){
         <div className="flex flex-col items-center bg-cardOverlay opacity-70 w-[40%] h-full md: w-508 h-full z-50 backdrop-blur-md p-4 px-4 py-12 gap-6">
             {/* logo-section */}
             <div className="flex items-center justify-start gap-4 w-full">
-                <img src="https://o.remove.bg/downloads/663dd53c-1050-42ec-b955-558d5c2453a5/restaurant-cutlery-circular-symbol-of-a-spoon-and-a-fork-in-a-circle-removebg-preview.png" alt="logo" className=" w-10" />
+            <img src="https://o.remove.bg/downloads/663dd53c-1050-42ec-b955-558d5c2453a5/restaurant-cutlery-circular-symbol-of-a-spoon-and-a-fork-in-a-circle-removebg-preview.png" alt="logo" className=" w-10" />
                 <p className="text-white font-semibold">Night Canteen Services</p>
             </div>
 
