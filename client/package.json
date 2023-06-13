@@ -1,5 +1,5 @@
 {
-  "name": "nightcanteenapp",
+  "name": "client",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,6 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@firebase/app": "^0.9.12",
+    "@firebase/auth": "^0.23.2",
+    "axios": "^1.4.0",
+    "firebase": "^9.22.2",
     "framer-motion": "^10.12.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

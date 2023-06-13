@@ -7,13 +7,86 @@ import {HiMail} from "react-icons/hi"
 import {RiLockPasswordFill} from "react-icons/ri"
 import{FcGoogle} from "react-icons/fc"
 import { buttonClick, fadeInOut } from "../animations"
+import {useNavigate} from "react-router-dom"
+
+import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth"
+
+import {app} from "../config/firebase.config"
+import { validateUserJWTToken } from "../api"
+
 
 export default function login(){
     const[userEmail, setuserEmail]= useState("");
     const[userisSignUp, setuserisSignUp]= useState(false);
     const[password, setpassword]= useState("");
     const[confirm_password, setconfirm_password]= useState("");
-    
+
+    const firebaseAuth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+
+    const navigate = useNavigate()
+
+    const loginUsingGoogle = async() => {
+        await signInWithPopup(firebaseAuth, provider).then( userCred => {
+            firebaseAuth.onAuthStateChanged((Cred) => {
+                if (Cred) {
+                    Cred.getIdToken().then((token) => {
+                      validateUserJWTToken(token).then(data =>{
+                        console.log(data);
+                      }) ;  
+                      navigate("/", {replace : true });
+                    });
+                }
+            });    
+        });
+    };
+    const signUpUsingMail = async() =>{
+        if (userEmail==="" || password==="" || confirm_password===""){
+            // console.log("Empty fields");
+            //alert
+        }else{
+            if (password===confirm_password){
+                setuserEmail("")
+                setpassword("")
+                setconfirm_password("")
+                await createUserWithEmailAndPassword(firebaseAuth, userEmail, password).then(userCred =>  {
+                    firebaseAuth.onAuthStateChanged((Cred) => {
+                        if (Cred) {
+                            Cred.getIdToken().then((token) => {
+                              validateUserJWTToken(token).then(data =>{
+                                console.log(data);
+                              }) ;   
+                              navigate("/", {replace : true });
+                            });
+                        }
+                    });    
+                })
+                
+            }else{
+                //alert
+            }
+        }
+    }
+
+    const signInUsingMail = async() => {
+        if (userEmail !== "" && password !== ""){
+            await signInWithEmailAndPassword(firebaseAuth, userEmail, password).then(userCred =>{
+                firebaseAuth.onAuthStateChanged((Cred) => {
+                    if (Cred) {
+                        Cred.getIdToken().then((token) => {
+                          validateUserJWTToken(token).then(data =>{
+                            console.log(data);
+                          }) ;   
+                          navigate("/", {replace : true });
+                        });
+                    }
+                });  
+            })
+        }else{
+            //alert
+        }
+    };
+
 
   return (
     <div className="w-screen h-screen relative overflow-hidden flex">
@@ -82,9 +155,11 @@ export default function login(){
                     <motion.button 
                     {...fadeInOut} 
                     className="w-full px-4 py-2 rounded-md bg-red-400 cursor-pointer text-white text-xl hover:bg-red-500 transition-all duration-150"
+                    onClick={signUpUsingMail}
                     >SIGN UP</motion.button>  :
                     <motion.button 
                     {...fadeInOut} 
+                    onClick={signInUsingMail}
                     className="w-full px-4 py-2 rounded-md bg-red-400 cursor-pointer text-white text-xl hover:bg-red-500 transition-all duration-150"
                     >SIGN IN</motion.button>
                 }
@@ -101,8 +176,12 @@ export default function login(){
                 userisSignUp ? <motion.div {...buttonClick} className="flex item-center, justify-center px-20 py-2 bg-white-500 backdrop-blur-md cursor-pointer rounded-3xl gap-4">
                 <FcGoogle/>
                 <p className="capitalize text-base text-white">Sign up with google</p>
+
                 </motion.div>  :   
-                <motion.div {...buttonClick} className="flex item-center, justify-center px-20 py-2 bg-white-500 backdrop-blur-md cursor-pointer rounded-3xl gap-4">
+                <motion.div {...buttonClick} className="flex item-center, justify-center px-20 py-2 bg-white-500 backdrop-blur-md cursor-pointer rounded-3xl gap-4"
+                onClick={loginUsingGoogle}  >
+                 
+                 
                 <FcGoogle/>
                 <p className="capitalize text-base text-white">Sign In with google</p>
                 </motion.div>
