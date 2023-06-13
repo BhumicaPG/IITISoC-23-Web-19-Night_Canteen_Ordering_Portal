@@ -173,15 +173,14 @@ export default function login(){
             </div>
 
             {
-                userisSignUp ? <motion.div {...buttonClick} className="flex item-center, justify-center px-20 py-2 bg-white-500 backdrop-blur-md cursor-pointer rounded-3xl gap-4">
+                userisSignUp ? <motion.div {...buttonClick} className="flex item-center, justify-center px-20 py-2 bg-white-500 backdrop-blur-md cursor-pointer rounded-3xl gap-4"
+                onClick={loginUsingGoogle}>
                 <FcGoogle/>
                 <p className="capitalize text-base text-white">Sign up with google</p>
-
                 </motion.div>  :   
+
                 <motion.div {...buttonClick} className="flex item-center, justify-center px-20 py-2 bg-white-500 backdrop-blur-md cursor-pointer rounded-3xl gap-4"
                 onClick={loginUsingGoogle}  >
-                 
-                 
                 <FcGoogle/>
                 <p className="capitalize text-base text-white">Sign In with google</p>
                 </motion.div>
