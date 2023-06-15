@@ -1,6 +1,7 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import LoginInput from "../components/LoginInput"
 import {motion} from 'framer-motion'
+// import{CircleLoader} from "react-awesome-loaders"
 // need to import logo and background images!!!!!!!!!!!!!!!!!
 // import { LoginBg, logo } from "../assets/img"
 import logo from "../assets/img/logo2.png";
@@ -9,12 +10,15 @@ import {HiMail} from "react-icons/hi"
 import {RiLockPasswordFill} from "react-icons/ri"
 import{FcGoogle} from "react-icons/fc"
 import { buttonClick, fadeInOut } from "../animations"
-import {useNavigate} from "react-router-dom"
+
 
 import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth"
 
 import {app} from "../config/firebase.config"
 import { validateUserJWTToken } from "../api"
+import { useDispatch, useSelector } from "react-redux";
+import {useNavigate} from "react-router-dom";
+import { alertInfo, alertWarning } from "../context/actions/AlertAction"
 
 
 export default function login(){
@@ -26,7 +30,20 @@ export default function login(){
     const firebaseAuth = getAuth(app);
     const provider = new GoogleAuthProvider();
 
-    const navigate = useNavigate()
+
+    const navigate = useNavigate();
+    const dispatch= useDispatch();
+
+    const user=useSelector(state=>state.user);
+    const alert=useSelector(state=>state.alert);
+
+
+    useEffect(()=>{
+        if(user){
+            navigate("/" , {replace : true})
+        }
+    }, [user]);
+
 
     const loginUsingGoogle = async() => {
         await signInWithPopup(firebaseAuth, provider).then( userCred => {
@@ -34,19 +51,25 @@ export default function login(){
                 if (Cred) {
                     Cred.getIdToken().then((token) => {
                       validateUserJWTToken(token).then(data =>{
-                        console.log(data);
+                        // console.log(data);
+                        dispatch(setUserDetails(data));
                       }) ;  
                       navigate("/", {replace : true });
+                        // console.log(token);
                     });
+                    
                 }
             });    
         });
     };
+
     const signUpUsingMail = async() =>{
         if (userEmail==="" || password==="" || confirm_password===""){
             // console.log("Empty fields");
             //alert
-        }else{
+            dispatch(alertInfo("required fields shouldn't be empty"))
+        }
+        else{
             if (password===confirm_password){
                 setuserEmail("")
                 setpassword("")
@@ -56,19 +79,21 @@ export default function login(){
                         if (Cred) {
                             Cred.getIdToken().then((token) => {
                               validateUserJWTToken(token).then(data =>{
-                                console.log(data);
+                                // console.log(data);
+                                dispatch(setUserDetails(data));
                               }) ;   
                               navigate("/", {replace : true });
                             });
                         }
                     });    
                 })
-                
+                // console.log("equal");
             }else{
                 //alert
+                dispatch(alertWarning("passwords doesn't match"))
             }
         }
-    }
+    };
 
     const signInUsingMail = async() => {
         if (userEmail !== "" && password !== ""){
@@ -77,7 +102,8 @@ export default function login(){
                     if (Cred) {
                         Cred.getIdToken().then((token) => {
                           validateUserJWTToken(token).then(data =>{
-                            console.log(data);
+                            // console.log(data);
+                            dispatch(setUserDetails(data));
                           }) ;   
                           navigate("/", {replace : true });
                         });
@@ -86,6 +112,7 @@ export default function login(){
             })
         }else{
             //alert
+            dispatch(alertWarning("passwords doesn't match"))
         }
     };
 
@@ -99,7 +126,7 @@ export default function login(){
         <div className="flex flex-col items-center bg-cardOverlay opacity-70 w-[40%] h-full md: w-508 h-full z-50 backdrop-blur-md p-4 px-4 py-12 gap-6">
             {/* logo-section */}
             <div className="flex items-center justify-start gap-4 w-full">
-            <img src={logo} alt="logo" className=" w-10" />
+            <img src="https://img.freepik.com/premium-vector/pizza-logo-template-suitable-restaurant-cafe-logo-restaurant-food-delivery-service_279597-968.jpg?w=740" alt="logo" className=" w-10" />
                 <p className="text-white font-semibold">Night Canteen Services</p>
             </div>
 

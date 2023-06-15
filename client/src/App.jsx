@@ -1,4 +1,5 @@
 import "./index.css"
+import { fadeInOut } from "./animations"
 import {Route, Routes} from 'react-router-dom'
 //import {Main, Login} from "./containers"
 import { motion } from "framer-motion";
@@ -7,10 +8,14 @@ import Main from "./containers/Main"
 import { app } from "./config/firebase.config";
 import React, { useEffect, useState } from "react";
 import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth"
-import {useDispatch} from "react-redux";
 import { validateUserJWTToken} from "./api";
 import { setuserDetails } from "./context/actions/userActions";
 import { fadeInOut } from "./animations";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {CirclePopLoader} from "react-loaders-kit"
+import { Alert } from "./components/index"
+
 
 export default function App(){
   const firebaseAuth = getAuth(app);
@@ -35,6 +40,34 @@ export default function App(){
   });  
   }, []);
 
+export default function App() {
+  const firebaseAuth = getAuth(app);
+  
+  const [IsLoading , setIsLoading]=useState(false);
+  const alert=useSelector(state=>state.alert)
+
+  const dispatch= useDispatch();
+
+  useEffect(()=>{
+    setIsLoading(true);
+    firebaseAuth.onAuthStateChanged((Cred) => {
+      if (Cred) {
+          Cred.getIdToken().then((token) => {
+            validateUserJWTToken(token).then((data) =>{
+              // console.log("data");
+              // console.log(data);
+              dispatch(setUserDetails(data));
+            });
+          });
+          console.log("Cred");
+          console.log(Cred);
+      }
+      setInterval(()=>{
+        setIsLoading(false);
+      }, 3000);
+    });
+  }, [])
+
   return (
     <div className='w-screen min-h-screen  h-auto flex flex-col items-center justify-center'>
       {isLoading && (
@@ -48,8 +81,10 @@ export default function App(){
           <Route path="/*" element={<Main />} />
           <Route path="/login" element={<Login />} />
       </Routes>
+
+      {alert?.type && <Alert type={alert?.type} message={alert?.message} />}
+
     </div>
     
   );
 }
-
