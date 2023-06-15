@@ -10,6 +10,7 @@ router.get("/jwtVerification", async (req, res) => {
       }
 
     const token= req.headers.authorization.split(" ")[1]
+    // return res.status(200).send({token : token});
     try{
         const decodedValue= await admin.auth().verifyIdToken(token);
         if (!decodedValue){
@@ -26,6 +27,6 @@ router.get("/jwtVerification", async (req, res) => {
             msg: `Error in extracting the token : ${err}`,
     });
     }
-
+    
 });
 module.exports = router;
