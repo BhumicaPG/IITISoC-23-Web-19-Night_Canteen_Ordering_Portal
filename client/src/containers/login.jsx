@@ -18,7 +18,7 @@ import {app} from "../config/firebase.config"
 import { validateUserJWTToken } from "../api"
 import { useDispatch, useSelector } from "react-redux";
 import {useNavigate} from "react-router-dom";
-import { alertInfo, alertWarning } from "../context/actions/AlertAction"
+import { alertInfo, alertWarning } from "../context/actions/alertAction"
 
 
 export default function login(){

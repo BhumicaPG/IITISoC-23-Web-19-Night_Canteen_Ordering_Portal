@@ -8,4 +8,4 @@ const myReducers=combineReducers({
     alert : alertReducer,
 })
 
-export default myReducer;
+export default myReducers;
