@@ -13,6 +13,7 @@ import { getAuth} from "firebase/auth"
 import { setUserDetails } from "./context/actions/userActions"
 import {CirclePopLoader} from "react-loaders-kit"
 import { Alert } from "./components/index"
+import DashBoard from "./containers/DashBoard"
 
 
 
@@ -56,6 +57,7 @@ export default function App() {
       <Routes>
           <Route path="/*" element={<Main />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/dashboard/*" element={<DashBoard />} />
       </Routes>
 
       {alert?.type && <Alert type={alert?.type} message={alert?.message} />}
