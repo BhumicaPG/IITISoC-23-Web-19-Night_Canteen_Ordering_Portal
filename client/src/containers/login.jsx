@@ -3,7 +3,8 @@ import LoginInput from "../components/LoginInput"
 import {motion} from 'framer-motion'
 // import{CircleLoader} from "react-awesome-loaders"
 // need to import logo and background images!!!!!!!!!!!!!!!!!
-// import { LoginBg, Logo } from "../assets/img"
+// import { LoginBg, logo } from "../assets/img"
+import logo from "../assets/img/logo2.png";
 
 import {HiMail} from "react-icons/hi"
 import {RiLockPasswordFill} from "react-icons/ri"
@@ -17,7 +18,7 @@ import {app} from "../config/firebase.config"
 import { validateUserJWTToken } from "../api"
 import { useDispatch, useSelector } from "react-redux";
 import {useNavigate} from "react-router-dom";
-import { alertInfo, alertWarning } from "../context/actions/AlertAction"
+import { alertInfo, alertWarning } from "../context/actions/alertAction"
 
 
 export default function login(){

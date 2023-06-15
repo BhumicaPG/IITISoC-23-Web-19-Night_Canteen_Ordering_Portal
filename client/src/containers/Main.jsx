@@ -1,11 +1,10 @@
 import React from 'react'
+import {Header} from "../components";
 
 const Main = () => {
-  return (
-    <div>
-      <h1 className='text-green-500 font-extrabold'>Main</h1>
-    </div>
-  )
+  return <main className='w-screen min-h-screen flex items-center justify-center flex-col bg-primary'>
+    <Header />
+  </main>
 }
 
 export default Main
