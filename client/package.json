@@ -21,7 +21,10 @@
     "axios": "^1.4.0",
     "firebase": "^9.22.2",
     "framer-motion": "^4.1.17",
+<<<<<<< HEAD
     "material-table": "^2.0.5",
+=======
+>>>>>>> 601c3d755277fa6cdd2e62a1e624c487fca53f54
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.9.0",
