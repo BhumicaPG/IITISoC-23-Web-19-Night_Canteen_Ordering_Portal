@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import logo from "../assets/img/logo2.png";
+import logo from "../assets/img/headerlogo.png";
 import Avatar from "../assets/img/avatar.png";
 import { NavLink, Link, useNavigate } from "react-router-dom";
 import { MdShoppingCart, MdLogout, MdAdd } from "react-icons/md";
@@ -34,10 +34,10 @@ const Header = () => {
 
 
     return (
-        <header className="fixed backdrop-blur-md z-50 inset-x-0 top-0 flex items-center justify-between px-12 ms:px-20 py-6">
+        <header className="fixed backdrop-blur-sm z-50 inset-x-0 top-0 flex items-center justify-between px-12 ms:px-20 py-6 text-slate-50">
             <NavLink to={"/"} className="flex items-center justify-cemter gap-4">
             <img src={logo} className="w-12" alt="logo here" />
-            <p className="font-semibold text-xl">City</p>
+            <p className="font-semibold text-xl">Night Bites</p>
             </NavLink>
 
             <nav className="flex items-center justify-center gap-8">
@@ -86,7 +86,7 @@ const Header = () => {
                 //     setCartMenu(!cartMenu);
                 //   }}
                 >
-                  <MdShoppingCart className="text-3xl text-textColor" />
+                  <MdShoppingCart className="text-3xl text-white" />
                   {/* <p className="text-base text-white font-semibold">My Cart</p> */}
                   {/* {cartItems && cartItems.length > 0 && ( */}
                     <div className="w-6 h-6 rounded-full bg-red-500 flex items-center justify-center absolute -top-4 -right-1">
@@ -115,17 +115,17 @@ const Header = () => {
                             onMouseLeave={() => setIsMenu(false)} 
                             className="px-6 py-4 w-48 bg-lightOverlay backdrop-blur-md rounded-md shadow-md absolute top-12 right-0 flex flex-col gap-4">
                             
-                            <Link className="hover:text-red-500 text-xl text-textColor"
+                            <Link className="hover:text-red-500 text-xl text-white"
                             to={"/dashboard/home"}
                             >
                                 Dashboard
                             </Link>
-                            <Link className="hover:text-red-500 text-xl text-textColor"
+                            <Link className="hover:text-red-500 text-xl text-white"
                             to={"/profile"}
                             >
                                 My Profile
                             </Link>
-                            <Link className="hover:text-red-500 text-xl text-textColor"
+                            <Link className="hover:text-red-500 text-xl text-white"
                             to={"/orders"}
                             >
                                 Orders
