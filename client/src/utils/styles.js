@@ -4,5 +4,7 @@ export const isActiveStyles =
 export const isNotActiveStyles = 
 " text-xl text-white hover:text-red-700 duration-100 px-4 py-2 transition-all ease-in-out";
 
+export const isNtActiveStyles = 
+" text-xl text-black hover:text-red-700 duration-100 px-4 py-2 transition-all ease-in-out";
 
 export const randomData = []

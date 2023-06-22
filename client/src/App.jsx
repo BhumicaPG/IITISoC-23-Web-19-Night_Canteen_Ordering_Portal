@@ -9,12 +9,13 @@ import { app } from "./config/firebase.config";
 import React, { useEffect, useState } from "react";
 import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth"
 import { validateUserJWTToken} from "./api";
-import { setuserDetails } from "./context/actions/userActions";
+import { setUserDetails } from "./context/actions/userActions";
 // import { fadeInOut } from "./animations";
 // import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 // import {CirclePopLoader} from "react-loaders-kit"
 import { Alert } from "./components/index"
+import DashBoard from "./containers/DashBoard"
 
 
 // export default function App(){
@@ -56,7 +57,7 @@ export default function App() {
             validateUserJWTToken(token).then((data) =>{
               // console.log("data");
               // console.log(data);
-              dispatch(setuserDetails(data));
+              dispatch(setUserDetails(data));
             });
           });
           console.log("Cred");
@@ -80,6 +81,7 @@ export default function App() {
       <Routes>
           <Route path="/*" element={<Main />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/dashboard/*" element={<DashBoard />} />
       </Routes>
 
       {alert?.type && <Alert type={alert?.type} message={alert?.message} />}

@@ -113,7 +113,7 @@ const Header = () => {
                             <motion.div 
                             {...slideTop}
                             onMouseLeave={() => setIsMenu(false)} 
-                            className="px-6 py-4 w-48 bg-lightOverlay backdrop-blur-md rounded-md shadow-md absolute top-12 right-0 flex flex-col gap-4">
+                            className="px-6 py-4 w-48 bg-blend-lightOverlay backdrop-blur-3xl rounded-md shadow-md absolute top-12 right-0 flex flex-col gap-4">
                             
                             <Link className="hover:text-red-500 text-xl text-white"
                             to={"/dashboard/home"}

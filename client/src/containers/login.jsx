@@ -11,7 +11,6 @@ import {RiLockPasswordFill} from "react-icons/ri"
 import{FcGoogle} from "react-icons/fc"
 import { buttonClick, fadeInOut } from "../animations"
 
-
 import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth"
 
 import {app} from "../config/firebase.config"
@@ -19,6 +18,7 @@ import { validateUserJWTToken } from "../api"
 import { useDispatch, useSelector } from "react-redux";
 import {useNavigate} from "react-router-dom";
 import { alertInfo, alertWarning } from "../context/actions/alertAction"
+import { setUserDetails } from "../context/actions/userActions";
 
 
 export default function login(){
