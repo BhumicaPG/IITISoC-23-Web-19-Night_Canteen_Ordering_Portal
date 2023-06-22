@@ -1,7 +1,7 @@
 import React from 'react'
 import DBRightSection from "../components/DBRightSection"
 // import DBLeftSection from "../components/DBLeftSection";
-import DBLeftSection from "../components/DBleftSection";
+import DBLeftSection from "../components/DBLeftSection";
 
 
 const DashBoard = () => {

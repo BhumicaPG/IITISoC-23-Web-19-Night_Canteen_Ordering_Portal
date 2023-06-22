@@ -9,7 +9,7 @@ import { app } from "./config/firebase.config";
 import React, { useEffect, useState } from "react";
 import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth"
 import { validateUserJWTToken} from "./api";
-import { setuserDetails } from "./context/actions/userActions";
+import { setUserDetails } from "./context/actions/userActions";
 // import { fadeInOut } from "./animations";
 // import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -57,7 +57,7 @@ export default function App() {
             validateUserJWTToken(token).then((data) =>{
               // console.log("data");
               // console.log(data);
-              dispatch(setuserDetails(data));
+              dispatch(setUserDetails(data));
             });
           });
           console.log("Cred");
