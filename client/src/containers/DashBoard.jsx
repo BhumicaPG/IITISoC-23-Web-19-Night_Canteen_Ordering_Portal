@@ -6,7 +6,7 @@ import DBLeftSection from "../components/DBLeftSection";
 
 const DashBoard = () => {
   return (
-    <div className='w-screen h-screen flex items-center text-black font-extrabold bg-white gap-2'>
+    <div className='w-screen h-screen flex items-center text-black font-extrabold bg-gray-100 gap-2'>
         <DBLeftSection/>
         <DBRightSection/> 
         

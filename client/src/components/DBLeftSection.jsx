@@ -55,7 +55,7 @@ const DBLeftSection = () => {
                     isActive ? isActiveStyles : isNtActiveStyles
                 }
             >
-                New Items
+                Add new Items
             </NavLink>
 
             
@@ -74,7 +74,7 @@ const DBLeftSection = () => {
 
 
       <div className="w-full items-center justify-center flex-col h-260 mt-auto mb-0 px-2">
-        <div className="w-full h-full rounded-md bg-blue-300 flex items-center justify-center flex-col gap-3 px-3">
+        <div className="w-full h-full rounded-md bg-red-500 flex items-center justify-center flex-col gap-3 px-3">
           <div className="w-8 h-8 border bg-white rounded-full  flex items-center justify-center mt-3">
             <p className="text-2xl font-bold text-blue-700">?</p>
           </div>
