@@ -4,11 +4,20 @@ export const isActiveStyles =
 export const isNotActiveStyles = 
 " text-xl text-white hover:text-red-700 duration-100 px-4 py-2 transition-all ease-in-out";
 
-<<<<<<< HEAD
 export const isNtActiveStyles = 
 " text-xl text-black hover:text-red-700 duration-100 px-4 py-2 transition-all ease-in-out";
 
-=======
->>>>>>> 601c3d755277fa6cdd2e62a1e624c487fca53f54
 
 export const randomData = []
+
+export const statuses = [
+    {id : 1, title : "Drinks", category :"drinks"},
+    {id : 2, title : "Desserts", category :"desserts"},
+    {id : 3, title : "Fruits", category :"fruits"},
+    {id : 4, title : "Rice", category :"rice"},
+    {id : 5, title : "Curry", category :"curry"},
+    {id : 6, title : "Chinese", category :"chinese"},
+    {id : 7, title : "Bread", category :"bread"},
+    {id : 8, title : "Mughlai", category :"mughlai"},
+    {id : 8, title : "Non Veg", category :"nonveg"},
+]
