@@ -2,7 +2,7 @@ import React from 'react';
 import {motion} from "framer-motion"
 import chef1 from "../assets/img/chef1.png"
 import HeroBg from "../assets/img/heroBg.png"
-import slider from "../assets/img/slider.jpg"
+import slider from "../assets/img/burger.jpg"
 import { NavLink, Link, useNavigate } from "react-router-dom";
 import { buttonClick } from '../animations';
 // import { staggerFadeInOut } from '../animations';
@@ -10,7 +10,18 @@ import { buttonClick } from '../animations';
 // class Home = () => {
 export default function Home(){
         return (              
-            <motion.div className='w-full grid grid-cols-1 md:grid-cols-2 gap-4'>
+            // <motion.div className='bg-[url("https://img.freepik.com/premium-vector/oktoberfest-2022-beer-festival-hand-drawn-doodle-elements-german-traditional-holiday-octoberfest-craft-beer-blue-white-rhombus-set-elements_550168-413.jpg?w=1260")] w-screen object-fill grid grid-cols-1 md:grid-cols-2 gap-4 bg-cover bg-center p-36 px-12 ms:px-20'
+            // style={{backgroundImage:`url(${slider})`,
+            // backgroundSize: 'cover',
+            // backgroundRepeat: 'no-repeat',
+            // backgroundPosition: 'center',}}>
+
+            <motion.div className=' w-full grid grid-cols-1 md:grid-cols-2 gap-4 px-12 ms:px-20 p-36'
+            style={{backgroundImage:`url(${slider})`,
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',}}>
+
                 <div
                  className='flex flex-col items-start justify-start gap-6'>
 
