@@ -19,3 +19,31 @@ export const validateUserJWTToken = async (token) => {
         return null;
     }
 };
+
+
+
+//add new item
+
+export const addNewProduct=async(data)=>{
+    try{
+        const res= await axios.post(`${baseURL}/api/products/create`, {...data});
+        // console.log("yha se data.data jaa rha")
+        return res.data.data;
+    }
+    catch(err){
+        return null;
+    }
+};
+
+//get all the products
+export const getAllProducts=async()=>{
+    try{
+        const res= await axios.get(`${baseURL}/api/products/all`);
+        console.log("yha se data.data jaa rha")
+        console.log(res.data.data);
+        return res.data.data;
+    }
+    catch(err){
+        return null;
+    }
+};

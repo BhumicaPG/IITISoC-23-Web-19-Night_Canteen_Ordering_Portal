@@ -9,7 +9,10 @@ import {alertSuccess, alertDanger, alertWarning, alertInfo, alertNULL} from "../
 import {motion} from 'framer-motion'
 import { buttonClick } from '../animations';
 import {MdDelete} from "react-icons/md"
-import LinearProgress from '@mui/material/LinearProgress';
+// import LinearProgress from '@mui/material/LinearProgress';
+
+import {addNewProduct, getAllProducts}  from '../api/index';
+import {setAllProducts}  from '../context/actions/productActions';
 
 
 
@@ -92,7 +95,42 @@ const DBNewitems = () => {
   }
 
   const submitNewData=()=>{
-    
+    console.log("submit p click to ho rha hai")
+
+    const data={
+      product_name       : ItemName,
+      product_category   : category,
+      product_price      : price,
+      imageURL           : imageDownloadURL,
+    };
+
+    console.log("submit p click to ho rha hai but yha p data :")
+    console.log(data);
+    console.log("yha v1 aaya");
+
+
+    addNewProduct(data).then(res=>{
+
+      console.log("yha v2 aaya");
+      console.log(res);   
+      console.log("yha ni aaya");
+
+      dispatch(alertSuccess("New Item Added succesfully"));
+      setTimeout(()=>{
+        dispatch(alertNULL())
+      }, 3000);
+
+      setimageDownloadURL(null);
+      setItemName("");
+      setPrice("");
+      setcategory(null);
+    });
+
+    getAllProducts().then(data=>{
+      console.log("getallproduct wala data : ")
+      console.log(data);
+      dispatch(setAllProducts(data))
+    })
   }
 
   return (
