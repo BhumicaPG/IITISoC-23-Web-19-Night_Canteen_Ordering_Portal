@@ -223,7 +223,6 @@ const DBNewitems = () => {
   )
 }
 
-export default DBNewitems
 
 export const InputValueField=({type, placeholder, stateValue, stateFunc})=>{
   return (
@@ -239,5 +238,5 @@ export const InputValueField=({type, placeholder, stateValue, stateFunc})=>{
   );
       
 }
-
+export default DBNewitems;
 

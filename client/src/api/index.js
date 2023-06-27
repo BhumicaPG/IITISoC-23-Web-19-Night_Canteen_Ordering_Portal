@@ -47,3 +47,29 @@ export const getAllProducts=async()=>{
         return null;
     }
 };
+
+// delete a product
+export const deleteAProduct = async (productId) => {
+    console.log("delete me entry li")
+    try {
+        // console.log("delete kr try ke ander gye")
+      const res = await axios.delete(`${baseURL}/api/products/delete/${productId}`
+      );
+      
+      console.log("yha se data delete ho rha")
+      console.log(res.data.data);
+      return res.data.data;
+    } catch (err) {
+        console.log("error aaya hai delete me")
+      return null;
+    }
+  };
+  
+//   export const getAllUsers = async () => {
+//     try {
+//       const res = await axios.get(`${baseURL}/api/users/all`);
+//       return res.data.data;
+//     } catch (err) {
+//       return null;
+//     }
+//   };
