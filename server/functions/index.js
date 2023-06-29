@@ -44,7 +44,20 @@ app.get("/", (req, res) => {
 const userRoute = require("./routes/user");
 app.use("/api/users", userRoute);
 
+
+const productRoute=require("./routes/Products"); 
+app.use("/api/products/", productRoute);
+
+
+
 exports.app = functions.https.onRequest(app);
+
+
+
+
+
+
+
 
 
 // Create and deploy your first functions

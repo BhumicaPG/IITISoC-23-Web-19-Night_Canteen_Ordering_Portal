@@ -2,12 +2,12 @@ import React from 'react'
 import MaterialTable from 'material-table';
 import { ThemeProvider , createTheme} from '@mui/material';
 
-const DataTable = ({column, data, title, actions}) => {
+const DataTable = ({columns, data, title, actions}) => {
     const defaultMaterialTheme=createTheme();
     return (
         <ThemeProvider theme={defaultMaterialTheme}>
             <MaterialTable
-                columns={column}
+                columns={columns}
                 data={data}
                 title={title}
                 actions={actions}
@@ -16,4 +16,4 @@ const DataTable = ({column, data, title, actions}) => {
     )
 }
 
-export default DataTable
+export default DataTable;
