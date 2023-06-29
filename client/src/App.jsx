@@ -8,7 +8,7 @@ import Main from "./containers/Main"
 import { app } from "./config/firebase.config";
 import React, { useEffect, useState } from "react";
 import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth"
-import { validateUserJWTToken} from "./api";
+import { getAllCartItems, validateUserJWTToken} from "./api";
 import { setUserDetails } from "./context/actions/userActions";
 // import { fadeInOut } from "./animations";
 // import { useEffect, useState } from "react";
@@ -16,6 +16,7 @@ import { useDispatch, useSelector } from "react-redux";
 // import {CirclePopLoader} from "react-loaders-kit"
 import { Alert } from "./components/index"
 import DashBoard from "./containers/DashBoard"
+import { setCartItems } from "./context/actions/cartAction";
 
 
 // export default function App(){
@@ -57,6 +58,13 @@ export default function App() {
             validateUserJWTToken(token).then((data) =>{
               // console.log("data");
               // console.log(data);
+              if (data) {
+                getAllCartItems(data.user_id).then((items) => {
+                  console.log("items");
+                  console.log(items);
+                  dispatch(setCartItems(items));
+                });
+              };
               dispatch(setUserDetails(data));
             });
           });

@@ -14,10 +14,12 @@ import { app } from "../config/firebase.config"
 // import CheckOutContainer from "./CheckOutContainer";
 import { isActiveStyles, isNotActiveStyles } from "../utils/styles";
 import { setuserNull } from "../context/actions/userActions";
+import { setCartOn } from "../context/actions/displayCartAction";
 
 
 const Header = () => {
     const user = useSelector((state) => state.user);
+    const cart = useSelector((state) => state.cart);
     const [isMenu, setIsMenu] = useState(false);
     const firebaseAuth = getAuth(app);
     const navigate = useNavigate();
@@ -34,7 +36,7 @@ const Header = () => {
 
 
     return (
-        <header className="fixed backdrop-blur-sm z-50 inset-x-0 top-0 flex items-center justify-between px-12 ms:px-20 py-6 text-slate-50">
+        <header className="fixed backdrop-filter backdrop-blur-sm bg-opacity-30 border-b border-gray-600 z-50 inset-x-0 top-0 flex items-center justify-between px-12 ms:px-20 py-6 text-slate-50 bg-slate-700">
             <NavLink to={"/"} className="flex items-center justify-cemter gap-4">
             <img src={logo} className="w-12" alt="logo here" />
             <p className="font-semibold text-xl">Night Bites</p>
@@ -78,23 +80,19 @@ const Header = () => {
 
                 </ul>
 
-                <motion.div {...buttonClick} className="relative cursor-pointer"
-                //   whileTap={{ scale: 0.8 }}
-                //   className="flex items-center gap-2 bg-black px-6 py-4 rounded-md cursor-pointer relative"
-                //   onClick={() => {
-                //     setIsMobileMenu(false);
-                //     setCartMenu(!cartMenu);
-                //   }}
+                <motion.div 
+                {...buttonClick} 
+                onClick={() => dispatch(setCartOn())}
+                className="relative cursor-pointer"
                 >
                   <MdShoppingCart className="text-3xl text-white" />
-                  {/* <p className="text-base text-white font-semibold">My Cart</p> */}
-                  {/* {cartItems && cartItems.length > 0 && ( */}
+                  {cart?.length > 0 && (
                     <div className="w-6 h-6 rounded-full bg-red-500 flex items-center justify-center absolute -top-4 -right-1">
                       <p className="text-primary text-base font-semibold">2
-                        {/* {cartItems.length} */}
+                        {cart?.length}
                       </p>
                     </div>
-                  {/* )} */}
+                   )} 
                 </motion.div>
                 
                 {user ? (

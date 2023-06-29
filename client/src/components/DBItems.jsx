@@ -12,6 +12,7 @@ import { setAllProducts } from "../context/actions/productActions";
 
 
 const DBItems = () => {  
+
   const products = useSelector((state) => state.products);
   const dispatch = useDispatch();
   const defaultMaterialTheme = createTheme();
