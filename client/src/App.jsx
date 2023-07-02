@@ -11,7 +11,7 @@ import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPas
 import { getAllCartItems, validateUserJWTToken} from "./api";
 import { setUserDetails } from "./context/actions/userActions";
 // import { fadeInOut } from "./animations";
-// import { useEffect, useState } from "react";
+
 import { useDispatch, useSelector } from "react-redux";
 // import {CirclePopLoader} from "react-loaders-kit"
 import { Alert } from "./components/index"

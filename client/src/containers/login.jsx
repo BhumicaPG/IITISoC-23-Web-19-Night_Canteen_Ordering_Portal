@@ -68,6 +68,9 @@ export default function login(){
             // console.log("Empty fields");
             //alert
             dispatch(alertInfo("required fields shouldn't be empty"))
+            setTimeout(()=>{
+                dispatch(alertNULL())
+              }, 3000);
         }
         else{
             if (password===confirm_password){
@@ -91,6 +94,9 @@ export default function login(){
             }else{
                 //alert
                 dispatch(alertWarning("passwords doesn't match"))
+                setTimeout(()=>{
+                    dispatch(alertNULL())
+                  }, 3000);
             }
         }
     };
@@ -113,6 +119,9 @@ export default function login(){
         }else{
             //alert
             dispatch(alertWarning("passwords doesn't match"))
+            setTimeout(()=>{
+                dispatch(alertNULL())
+              }, 3000);
         }
     };
 

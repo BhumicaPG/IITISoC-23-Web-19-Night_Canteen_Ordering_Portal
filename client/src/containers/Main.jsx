@@ -2,22 +2,22 @@ import React, { useEffect } from 'react'
 import {Cart, FilterSection, Header, Home, HomeSlider} from "../components";
 // import slider from "../assets/img/burger.jpg"
 import { useDispatch, useSelector } from 'react-redux';
-// import { getAllProducts } from "../api"
-// import {setAllProducts} from "../context/actions/productActions";
+import { getAllProducts } from "../api"
+import {setAllProducts} from "../context/actions/productActions";
 
 const Main = () => {
 
-  // const products = useSelector((state) => state.products);
+  const products = useSelector((state) => state.products);
   const isCart = useSelector((state) => state.isCart);
-  // const dispatch = useDispatch
+  const dispatch = useDispatch
 
-  // useEffect(() =>{
-  //   if (!products) {
-  //     getAllProducts().then((data) => {
-  //       dispatch(setAllProducts(data));
-  //     });
-  //   }
-  // }, []);
+  useEffect(() =>{
+    if (!products) {
+      getAllProducts().then((data) => {
+        dispatch(setAllProducts(data));
+      });
+    }
+  }, []);
 
   return(
 

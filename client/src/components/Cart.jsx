@@ -18,11 +18,11 @@ const Cart =() => {
     const [total, setTotal] = useState(0);
   
     useEffect(() => {
-      let sum = 0;
+      let tot = 0;
       if (cart) {
         cart.map((data) => {
-          sum = sum + data.product_price * data.quantity;
-          setTotal(sum);
+          tot = tot + data.product_price * data.quantity;
+          setTotal(tot);
         });
       }
     }, [cart]);

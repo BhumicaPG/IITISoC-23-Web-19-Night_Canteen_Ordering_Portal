@@ -88,7 +88,7 @@ const Header = () => {
                   <MdShoppingCart className="text-3xl text-white" />
                   {cart?.length > 0 && (
                     <div className="w-6 h-6 rounded-full bg-red-500 flex items-center justify-center absolute -top-4 -right-1">
-                      <p className="text-primary text-base font-semibold">2
+                      <p className="text-primary text-base font-semibold">
                         {cart?.length}
                       </p>
                     </div>

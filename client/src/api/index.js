@@ -51,7 +51,7 @@ export const getAllProducts=async()=>{
 export const deleteAProduct = async (productId) => {
     console.log("delete me entry li")
     try {
-        // console.log("delete kr try ke ander gye")
+        // console.log("delete ke try ke ander gye")
       const res = await axios.delete(`${baseURL}/api/products/delete/${productId}`
       );
       

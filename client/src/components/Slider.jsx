@@ -26,15 +26,15 @@ const Slider = () => {
                 // modules={[Pagination]}
                 className="mySwiper"
             >
-                {/* {fruits && 
+                {fruits && 
                     fruits.map((data, i) => (
                     <SwiperSlide key={i}>
-                    <SLiderCard key = {i} data={data} index={i} />
+                    <SliderCard key = {i} data={data} index={i} />
                     </SwiperSlide> 
-                ))} */}
+                ))}
 
                 {/* comment from here */}
-                <SwiperSlide>
+                {/* <SwiperSlide>
                     <SliderCard />
                 </SwiperSlide>
                 <SwiperSlide><SliderCard /></SwiperSlide>
@@ -43,7 +43,7 @@ const Slider = () => {
                 <SwiperSlide><SliderCard /></SwiperSlide>
                 <SwiperSlide><SliderCard /></SwiperSlide>
                 <SwiperSlide><SliderCard /></SwiperSlide>
-                <SwiperSlide><SliderCard /></SwiperSlide>
+                <SwiperSlide><SliderCard /></SwiperSlide> */}
                 {/* till here */}
 
             </Swiper>
