@@ -12,6 +12,7 @@ import { setAllProducts } from "../context/actions/productActions";
 
 
 const DBItems = () => {  
+
   const products = useSelector((state) => state.products);
   const dispatch = useDispatch();
   const defaultMaterialTheme = createTheme();
@@ -55,7 +56,7 @@ const DBItems = () => {
             icon: "edit",
             tooltip: "Edit Data",
             onClick: (event, rowData) => {
-              alert("You want to edit " + rowData.productId);
+              alert("You want to edit " + rowData.product_id);
             },
           },
           {
@@ -66,7 +67,7 @@ const DBItems = () => {
                 window.confirm("Are you sure, you want to perform this aciton")
               ) {
                 console.log("said yes")
-                deleteAProduct(rowData.productId).then((res) => {
+                deleteAProduct(rowData.product_id).then((res) => {
                   dispatch(alertSuccess("Product Deleted "));
                   console.log("delete ho gya")
                   setInterval(() => {

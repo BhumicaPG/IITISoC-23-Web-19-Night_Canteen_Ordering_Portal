@@ -21,7 +21,6 @@ export const validateUserJWTToken = async (token) => {
 };
 
 
-
 //add new item
 
 export const addNewProduct=async(data)=>{
@@ -49,11 +48,11 @@ export const getAllProducts=async()=>{
 };
 
 // delete a product
-export const deleteAProduct = async (productId) => {
+export const deleteAProduct = async (product_id) => {
     console.log("delete me entry li")
     try {
-        // console.log("delete kr try ke ander gye")
-      const res = await axios.delete(`${baseURL}/api/products/delete/${productId}`
+        // console.log("delete ke try ke ander gye")
+      const res = await axios.delete(`${baseURL}/api/products/delete/${product_id}`
       );
       
       console.log("yha se data delete ho rha")
@@ -65,11 +64,76 @@ export const deleteAProduct = async (productId) => {
     }
   };
   
-//   export const getAllUsers = async () => {
-//     try {
-//       const res = await axios.get(`${baseURL}/api/users/all`);
-//       return res.data.data;
-//     } catch (err) {
-//       return null;
-//     }
-//   };
+
+export const getAllUsers = async () => {
+  try {
+    const res = await axios.get(`${baseURL}/api/users/all`);
+    return res.data.data;
+  } catch (err) {
+    return null;
+  }
+};
+
+// add an item to cart
+// add new items to  the cart
+export const addNewItemToCart = async (user_id, data) => {
+    try {
+      const res = await axios.post(
+        `${baseURL}/api/products/addToCart/${user_id}`,
+        { ...data }
+      );
+      return res.data.data;
+    } catch (error) {
+      return null;
+    }
+};
+
+export const getAllCartItems = async (user_id) => {
+    try {
+      const res = await axios.get(
+        `${baseURL}/api/products/getCartItems/${user_id}`
+      );
+      return res.data.data;
+    } catch (error) {
+      return null;
+    }
+};
+
+// cart increment
+export const increaseItemQuantity = async (user_id, product_id, type) => {
+  console.log(user_id, product_id, type);
+  try {
+    const res = await axios.post(
+      `${baseURL}/api/products/updateCart/${user_id}`,
+      null,
+      { params: { product_id: product_id, type: type } }
+    );
+    return res.data.data;
+  } catch (error) {
+    return null;
+  }
+};
+
+export const getAllOrder = async () => {
+  try {
+    const res = await axios.get(`${baseURL}/api/products/orders`);
+    return res.data.data;
+  } catch (error) {
+    return null;
+  }
+};
+
+// update the order status
+export const updateOrderSts = async (order_id, sts) => {
+  try {
+    const res = await axios.post(
+      `${baseURL}/api/products/updateOrder/${order_id}`,
+      null,
+      { params: { sts: sts } }
+    );
+    return res.data.data;
+  } catch (error) {
+    return null;
+  }
+};
+
