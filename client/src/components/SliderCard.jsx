@@ -19,7 +19,11 @@ const SliderCard =({ data, index }) => {
       setTimeout(()=>{
         dispatch(alertNULL())
       }, 3000);
+      console.log("randommm")
       addNewItemToCart(user?.user_id, data).then((res) => {
+        console.log("user", user)
+        console.log("data", data)
+        console.log("res", res)
         getAllCartItems(user?.user_id).then((items) => {
           console.log("items of slider card")
           console.log(items)

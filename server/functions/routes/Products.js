@@ -65,14 +65,14 @@ router.delete("/delete/:productId", async (req, res) => {
 // create a cart
 router.post("/addToCart/:userId", async (req, res) => {
     const userId = req.params.userId;
-    const productId = req.body.productId;
+    const product_id = req.body.product_id;
   
     try {
       const doc = await db
         .collection("cartItems")
         .doc(`/${userId}/`)
         .collection("items")
-        .doc(`/${productId}/`)
+        .doc(`/${product_id}/`)
         .get();
   
       if (doc.data()) {
@@ -81,12 +81,12 @@ router.post("/addToCart/:userId", async (req, res) => {
           .collection("cartItems")
           .doc(`/${userId}/`)
           .collection("items")
-          .doc(`/${productId}/`)
+          .doc(`/${product_id}/`)
           .update({ quantity });
         return res.status(200).send({ success: true, data: updatedItem });
       } else {
         const data = {
-          productId: productId,
+          product_id: product_id,
           product_name: req.body.product_name,
           product_category: req.body.product_category,
           product_price: req.body.product_price,
@@ -97,7 +97,7 @@ router.post("/addToCart/:userId", async (req, res) => {
           .collection("cartItems")
           .doc(`/${userId}/`)
           .collection("items")
-          .doc(`/${productId}/`)
+          .doc(`/${product_id}/`)
           .set(data);
         return res.status(200).send({ success: true, data: addItems });
       }
@@ -109,7 +109,7 @@ router.post("/addToCart/:userId", async (req, res) => {
   // update cart to increase and decrease the quantity
   router.post("/updateCart/:user_id", async (req, res) => {
     const userId = req.params.user_id;
-    const productId = req.query.productId;
+    const product_id = req.query.product_id;
     const type = req.query.type;
   
     try {
@@ -117,7 +117,7 @@ router.post("/addToCart/:userId", async (req, res) => {
         .collection("cartItems")
         .doc(`/${userId}/`)
         .collection("items")
-        .doc(`/${productId}/`)
+        .doc(`/${product_id}/`)
         .get();
   
       if (doc.data()) {
@@ -127,7 +127,7 @@ router.post("/addToCart/:userId", async (req, res) => {
             .collection("cartItems")
             .doc(`/${userId}/`)
             .collection("items")
-            .doc(`/${productId}/`)
+            .doc(`/${product_id}/`)
             .update({ quantity });
           return res.status(200).send({ success: true, data: updatedItem });
         } else {
@@ -136,7 +136,7 @@ router.post("/addToCart/:userId", async (req, res) => {
               .collection("cartItems")
               .doc(`/${userId}/`)
               .collection("items")
-              .doc(`/${productId}/`)
+              .doc(`/${product_id}/`)
               .delete()
               .then((result) => {
                 return res.status(200).send({ success: true, data: result });
@@ -147,7 +147,7 @@ router.post("/addToCart/:userId", async (req, res) => {
               .collection("cartItems")
               .doc(`/${userId}/`)
               .collection("items")
-              .doc(`/${productId}/`)
+              .doc(`/${product_id}/`)
               .update({ quantity });
             return res.status(200).send({ success: true, data: updatedItem });
           }
@@ -174,7 +174,9 @@ router.post("/addToCart/:userId", async (req, res) => {
   
           docs.map((doc) => {
             response.push({ ...doc.data() });
+            console.log("response", response);
           });
+          
           return response;
         });
         return res.status(200).send({ success: true, data: response });

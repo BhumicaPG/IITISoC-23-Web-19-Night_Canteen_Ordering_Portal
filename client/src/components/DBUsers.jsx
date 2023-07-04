@@ -10,18 +10,26 @@ const DBUsers = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    console.log("userssssssss")
+    console.log(allUsers)
     if (!allUsers) {
       getAllUsers().then((data) => {
-        console.log("user data aa raha hai : ");
-        console.log(data);
+        // console.log("user data aa raha hai : ");
+        // console.log(data);
         dispatch(setAllUserDetails(data));
+        console.log("after dispatch")
+        console.log(setAllUserDetails(data))
       });
     }
+    console.log("ggggggggggg")
+    console.log(allUsers)
   }, []);
 
   return (
     <div className="flex items-center justify-self-center gap-4 pt-6 w-full">
       <DataTable
+
+      // hello
         data={allUsers}
         title="List of Users"
         columns={[

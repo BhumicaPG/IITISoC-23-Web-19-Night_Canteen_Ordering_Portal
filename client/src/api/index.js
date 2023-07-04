@@ -48,11 +48,11 @@ export const getAllProducts=async()=>{
 };
 
 // delete a product
-export const deleteAProduct = async (productId) => {
+export const deleteAProduct = async (product_id) => {
     console.log("delete me entry li")
     try {
         // console.log("delete ke try ke ander gye")
-      const res = await axios.delete(`${baseURL}/api/products/delete/${productId}`
+      const res = await axios.delete(`${baseURL}/api/products/delete/${product_id}`
       );
       
       console.log("yha se data delete ho rha")
@@ -100,13 +100,13 @@ export const getAllCartItems = async (user_id) => {
 };
 
 // cart increment
-export const increaseItemQuantity = async (user_id, productId, type) => {
-  console.log(user_id, productId, type);
+export const increaseItemQuantity = async (user_id, product_id, type) => {
+  console.log(user_id, product_id, type);
   try {
     const res = await axios.post(
       `${baseURL}/api/products/updateCart/${user_id}`,
       null,
-      { params: { productId: productId, type: type } }
+      { params: { product_id: product_id, type: type } }
     );
     return res.data.data;
   } catch (error) {
