@@ -5,6 +5,7 @@ import {Route, Routes} from 'react-router-dom'
 import { motion } from "framer-motion";
 import Login from "./containers/login"
 import Main from "./containers/Main"
+import MenuPage from "./components/MenuPage"
 import { app } from "./config/firebase.config";
 import React, { useEffect, useState } from "react";
 import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth"
@@ -90,6 +91,7 @@ export default function App() {
           <Route path="/*" element={<Main />} />
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard/*" element={<DashBoard />} />
+          <Route path="/menu" element={<MenuPage />} />
       </Routes>
 
       {alert?.type && <Alert type={alert?.type} message={alert?.message} />}

@@ -45,6 +45,7 @@ const Header = () => {
             <nav className="flex items-center justify-center gap-8">
                 <ul className="hidden md:flex items-center justify-center gap-16">
                     
+                    {/* Home */}
                     <NavLink
                         className={({ isActive }) =>
                             isActive ? isActiveStyles : isNotActiveStyles
@@ -53,6 +54,8 @@ const Header = () => {
                     >
                         Home
                     </NavLink>
+
+                    {/* Menu */}
                     <NavLink
                         className={({ isActive }) =>
                             isActive ? isActiveStyles : isNotActiveStyles
@@ -61,6 +64,8 @@ const Header = () => {
                     >
                         Menu
                     </NavLink>
+
+                    {/* Services */}
                     <NavLink
                         className={({ isActive }) =>
                             isActive ? isActiveStyles : isNotActiveStyles
@@ -69,6 +74,8 @@ const Header = () => {
                     >
                         Services
                     </NavLink>
+
+                    {/* About Us */}
                     <NavLink
                         className={({ isActive }) =>
                             isActive ? isActiveStyles : isNotActiveStyles
@@ -81,9 +88,9 @@ const Header = () => {
                 </ul>
 
                 <motion.div 
-                {...buttonClick} 
-                onClick={() => dispatch(setCartOn())}
-                className="relative cursor-pointer"
+                    {...buttonClick} 
+                    onClick={() => dispatch(setCartOn())}
+                    className="relative cursor-pointer"
                 >
                   <MdShoppingCart className="text-3xl text-white" />
                   {cart?.length > 0 && (
@@ -113,27 +120,33 @@ const Header = () => {
                             onMouseLeave={() => setIsMenu(false)} 
                             className="px-6 py-4 w-48 bg-blend-lightOverlay backdrop-blur-3xl rounded-md shadow-md absolute top-12 right-0 flex flex-col gap-4">
                             
+                            {/* dashboard */}
                             <Link className="hover:text-red-500 text-xl text-white"
                             to={"/dashboard/home"}
                             >
                                 Dashboard
                             </Link>
+
+                            {/* My Profile */}
                             <Link className="hover:text-red-500 text-xl text-white"
                             to={"/profile"}
                             >
                                 My Profile
                             </Link>
+
+                            {/* Orders */}
                             <Link className="hover:text-red-500 text-xl text-white"
                             to={"/orders"}
                             >
                                 Orders
                             </Link>
+
                             <hr />
 
                             <motion.div 
-                            {...buttonClick} 
-                            onClick={signOut}
-                            className="group flex item-center justify-center px-3 py-2 rounded-md shadow-md bg-gray-100 hover:bg-gray-200 gap-3 "
+                                {...buttonClick} 
+                                onClick={signOut}
+                                className="group flex item-center justify-center px-3 py-2 rounded-md shadow-md bg-gray-100 hover:bg-gray-200 gap-3 "
                             >
                                 <MdLogout className="text-2xl text-textColor group-hover::text-headingColor" />
                                 <p className="text-textColor text-xl group-hover:text-headingColor">

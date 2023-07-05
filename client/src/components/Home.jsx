@@ -38,10 +38,10 @@ export default function Home(){
             // backgroundPosition: 'center',}}>
 
             <motion.div className=' w-full grid grid-cols-1 md:grid-cols-2 gap-4 px-12 ms:px-20 p-36'
-            style={{backgroundImage:`url(${slider})`,
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center',}}>
+                style={{backgroundImage:`url(${slider})`,
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',}}>
 
                 <div
                  className='flex flex-col items-start justify-start gap-6'>
@@ -49,7 +49,7 @@ export default function Home(){
                     {/* free delivery  */}
                     <div className='px-4 py-1 flex items-center justify-center gap-2 bg-orange-100 rounded-full '>
                         <p className='text-lg font-semibold text-orange-500'>
-                        <NavLink to={"/"} className="hover:underline float-right space-x-4" >Check Out Menu</NavLink> 
+                        <NavLink to={"/menu"} className="hover:underline float-right space-x-4" >Check Out Menu</NavLink> 
                         </p>
                         <div className='w-10 h-10 flex items-center justify-center rounded-full bg-primary shadow-md'>
                             <img src={chef1} alt="" className='w-full h-full object-contain' />
