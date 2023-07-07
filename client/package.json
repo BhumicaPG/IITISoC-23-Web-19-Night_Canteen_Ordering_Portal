@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@firebase/app": "^0.9.12",
@@ -30,6 +31,7 @@
     "react-redux": "^8.1.0",
     "react-router-dom": "^6.12.1",
     "react-scripts": "^5.0.1",
+    "react-visibility-sensor": "^5.1.1",
     "redux": "^4.2.1",
     "swiper": "^9.4.1"
   },
@@ -48,10 +50,8 @@
     "tailwindcss": "^3.3.2",
     "vite": "^4.3.9"
   },
-
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
 }
-
