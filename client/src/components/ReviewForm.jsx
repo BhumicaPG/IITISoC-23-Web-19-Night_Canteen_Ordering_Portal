@@ -1,11 +1,29 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import styled from "styled-components";
-
-// npm i @emailjs/browser
+import { useDispatch } from "react-redux";
+import { alertNULL, alertSuccess } from "../context/actions/alertAction";
 
 const ReviewForm = () => {
   const form = useRef();
+  const dispatch = useDispatch();
+
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     user_name: '',
+  //     user_email: '',
+  //     message: '',
+  //     formSuccess: false
+  //   }
+  //   this.sendEmail = this.sendEmail.bind(this);
+  // };
+
+  // isFormValid = () => {
+  //   const {user_name, user_email, message} = this.state
+  
+  //   return user_name && user_email && message
+  // }
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -20,33 +38,38 @@ const ReviewForm = () => {
       .then(
         (result) => {
           console.log(result.text);
-          console.log("message sent");
+          console.log("Review sent");
+
+          dispatch(alertSuccess("Review sent successfully"));
+          setTimeout(() => {
+            dispatch(alertNULL())
+          }, 3000);
+
           e.target.reset()
-          
+
         },
         (error) => {
           console.log(error.text);
         },
-        // cancelCourse = () => { 
-        //     this.myFormRef.reset();
-        //   }
+
       );
   };
 
   return (
-  
-     <div className='bg-blend-overlay hover:drop-shadow-lg backdrop-blur-md rounded-xl border border-gray-400 flex items-center justify-between relative px-4 py-2 w-full md:w-340 md:min-w-350 gap-3'>
-    <StyledReviewForm>
-      <form ref={form} onSubmit={sendEmail}>
-        <label>Name</label>
-        <input type="text" name="user_name" />
-        <label>Email</label>
-        <input type="email" name="user_email" />
-        <label>Your Review</label>
-        <textarea name="message" />
-        <input type="submit" value="Send" />
-      </form>
-    </StyledReviewForm>
+
+    <div className='bg-blend-overlay hover:drop-shadow-lg backdrop-blur-md rounded-xl border border-gray-400 flex items-center justify-between relative px-4 py-2 w-full md:w-340 md:min-w-350 gap-3'>
+      <StyledReviewForm>
+        <form ref={form} onSubmit={sendEmail}>
+          <label>Name</label>
+          <input type="text" name="user_name" />
+          <label>Email</label>
+          <input type="email" name="user_email" />
+          <label>Your Review</label>
+          <textarea name="message" />
+          <input type="submit" value="Send" />
+          {/* <Button disabled={!isFormValid} type="submit" value="send">Submit</Button> */}
+        </form>
+      </StyledReviewForm>
     </div>
   );
 };
@@ -87,6 +110,7 @@ const StyledReviewForm = styled.div`
       outline: none;
       border-radius: 5px;
       border: 1px solid rgb(220, 220, 220);
+      background: rgb(243, 244, 246);
 
       &:focus {
         border: 2px solid rgba(156, 163, 175, 1);

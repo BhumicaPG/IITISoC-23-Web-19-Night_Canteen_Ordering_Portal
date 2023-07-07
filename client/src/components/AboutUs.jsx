@@ -29,12 +29,9 @@ const AboutUs = () => {
                         <div
                             class="bg-blend-overlay hover:drop-shadow-lg backdrop-blur-md bg-opacity-30 flex h-full items-center rounded-lg border border-gray-400 bg-white p-6 text-center text-slate-800 lg:pl-12 lg:text-left">
                             <div class="lg:pl-12">
-                                <h2 class="mb-8 text-3xl font-bold">Let it surprise you</h2>
+                                <h2 class="mb-8 text-3xl font-bold">Fuel Your Nocturnal Cravings</h2>
                                 <p class="mb-8 pb-2 lg:pb-0">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                    Maxime, sint, repellat vel quo quisquam accusamus in qui at
-                                    ipsa enim quibusdam illo laboriosam omnis. Labore itaque illum
-                                    distinctio eum neque!
+                                At Night Bites, we understand that hunger doesn't abide by traditional schedules. That's why we're here to satisfy your late-night cravings and provide an unforgettable dining experience when the moon is high and the city sleeps.
                                 </p>
 
                                 <div class="mx-auto mb-8 flex flex-col md:flex-row md:justify-around xl:justify-start">
@@ -44,7 +41,7 @@ const AboutUs = () => {
                                             <path stroke-linecap="round" stroke-linejoin="round"
                                                 d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         </svg>
-                                        Best team
+                                        Best chef
                                     </p>
 
                                     <p class="mx-auto mb-4 flex items-center md:mx-0 md:mb-2 lg:mb-0 xl:mr-20">
@@ -67,18 +64,7 @@ const AboutUs = () => {
                                 </div>
 
                                 <p>
-                                    Duis sagittis, turpis in ullamcorper venenatis, ligula nibh
-                                    porta dui, sit amet rutrum enim massa in ante. Curabitur in
-                                    justo at lorem laoreet ultricies. Nunc ligula felis, sagittis
-                                    eget nisi vitae, sodales vestibulum purus. Vestibulum nibh
-                                    ipsum, rhoncus vel sagittis nec, placerat vel justo. Duis
-                                    faucibus sapien eget tortor finibus, a eleifend lectus dictum.
-                                    Cras tempor convallis magna id rhoncus. Suspendisse potenti.
-                                    Nam mattis faucibus imperdiet. Proin tempor lorem at neque
-                                    tempus aliquet. Phasellus at ex volutpat, varius arcu id,
-                                    aliquam lectus. Vestibulum mattis felis quis ex pharetra
-                                    luctus. Etiam luctus sagittis massa, sed iaculis est vehicula
-                                    ut.
+                                Step into our vibrant and lively night canteen, where delicious aromas and a welcoming atmosphere await you. We have created a haven for night owls, offering a delectable menu that caters specifically to those seeking a satisfying meal during unconventional hours. We take pride in using only the freshest ingredients to craft a menu that is both innovative and comforting. From mouthwatering burgers and crispy fries to flavorful international cuisine and delightful desserts, our diverse range of offerings will satisfy any late-night craving.
                                 </p>
                             </div>
                         </div>

@@ -6,9 +6,9 @@ import { useSelector } from "react-redux";
 import { statuses } from "../utils/styles";
 import SliderCard from "./SliderCard";
 import FilterSection from "./FilterSection";
-import {Header, Slider} from "../components";
+import {Footer, Header, Slider} from "../components";
 import {Cart} from "../components";
-// import background
+
 
 const MenuPage = () => {
     const isCart = useSelector((state) => state.isCart);
@@ -21,7 +21,7 @@ const MenuPage = () => {
         backgroundPosition: "center"}}>
             
             <Header/>
-            <div className="flex flex-col gap-12 mt-28 ">
+            <div className="flex flex-col gap-12 mt-28 pb-12">
                 <motion.div className="w-full flex items-start justify-center flex-col px-12 ms:px-20">
                     <div className='w-full flex items-center justify-between'>
                         <div className='flex flex-col items-start justify-start gap-1'>
@@ -35,8 +35,11 @@ const MenuPage = () => {
                 </motion.div>
                 <FilterSection/>
             </div>
+
             {isCart && <Cart /> }
+            <Footer/>
         </div>
+        
     </>
     
   )
