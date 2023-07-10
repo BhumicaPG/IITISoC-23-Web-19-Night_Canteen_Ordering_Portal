@@ -3,6 +3,9 @@ const admin = require('firebase-admin');
 const db=admin.firestore();
 // const express = require("express");
 
+const stripe = require('stripe')(process.env.STRIPE_KEY);
+
+
 db.settings({ignoreUndefinedProperties : true});
 
 
@@ -186,5 +189,30 @@ router.post("/addToCart/:userId", async (req, res) => {
     })();
   });
   
+
+  //checkout method
+  router.post("/create-checkout-session", async (req, res) => {
+    const session = await stripe.checkout.sessions.create({
+      line_items: [
+        {
+          price_data: {
+            currency: 'usd',
+            product_data: {
+              name: 'T-shirt',
+            },
+            unit_amount: 2000,
+          },
+          quantity: 1,
+        },
+      ],
+      mode: 'payment',
+      success_url: `${process.env.CLIENT_URL}/checkout-success`,
+      cancel_url: `${process.env.CLIENT_URL}/`,
+    });
+    // console.log("or yhaaaa p products.js m aaya h")
+    res.send({url : session.url});
+    // res.redirect(303, session.url)
+      // res.redirect(303, session.url);
+  });
 
 module.exports = router;

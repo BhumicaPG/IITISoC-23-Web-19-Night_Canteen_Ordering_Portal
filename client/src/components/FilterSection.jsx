@@ -10,7 +10,7 @@ const FilterSection=() => {
     const [category, setCategory] = useState("fruits");
     const products = useSelector((state) => state.products);
         return (
-            <motion.div className="w-full flex items-start justify-center flex-col px-12 ms:px-20">
+            <motion.div className="w-full flex items-start justify-start flex-col px-12 ms:px-20">
                 <div className='w-full flex items-center justify-between'>
                         <div className='flex flex-col items-start justify-start gap-1'>
                                 <p className='text-2xl text-headingColor font-bold'>

@@ -11,6 +11,8 @@ import { BiChevronsRight } from "react-icons/bi";
 import { HiCurrencyRupee } from "react-icons/hi2";
 import { FcClearFilters } from "react-icons/fc";
 import { CartItemCard } from "./CartItemCard";
+
+
 // export const CartItemCard = (param) => {
 //   const { data, index } = param;
 //   console.log("data of cart ", param.data)
@@ -115,21 +117,27 @@ const Cart =() => {
       }
     }, [cart]);
   
-    // const handleCheckOut = () => {
-    //   const data = {
-    //     user: user,
-    //     cart: cart,
-    //     total: total,
-    //   };
-    //   axios
-    //     .post(`${baseURL}/api/products/create-checkout-session`, { data })
-    //     .then((res) => {
-    //       if (res.data.url) {
-    //         window.location.href = res.data.url;
-    //       }
-    //     })
-    //     .catch((err) => console.log(err));
-    // };
+    const handleCheckOut = () => {
+      // window.alert("Order Placed Successfully");
+      const data = {
+        user: user,
+        cart: cart,
+        total: total,
+      };
+
+      //matlab yha data to accesible haiii
+      // console.log(data);
+
+      axios.post(`${baseURL}/api/products/create-checkout-session`, {data}).then((res) => {
+          // if (res.data.url) {
+          //   window.location.href = res.data.url;
+          // }
+          console.log(res);
+          // window.alert("Order Placed Successfully");
+          // console.log("yesssssss axios k andar v process aagya hai")
+        })
+        .catch((err) => console.log(err));
+    };
   
     return (
       <motion.div
@@ -153,32 +161,38 @@ const Cart =() => {
         <div className="flex-1 flex flex-col items-start justify-start rounded-t-3xl bg-zinc-900 h-full py-6  gap-3 relative">
           {cart && cart?.length > 0 ? (
             <>
+            
+              {/* item listing */}
               <div className="flex flex-col w-full items-start justify-start gap-3 h-[65%] overflow-y-scroll scrollbar-none px-4">
                 {cart &&
                   cart?.length > 0 &&
                   cart?.map((item, i) => (
                     // <h1>{i}</h1>
-                    
                     <CartItemCard key={i} index={i} data={item} />
                   ))}
+
                   {/* empty */}
               </div>
-              <div className="bg-zinc-800 rounded-t-[60px] w-full h-[35%] flex flex-col items-center justify-center px-4 py-6 gap-24">
+
+              <div className="bg-zinc-800 rounded-t-[60px] w-full h-[35%] flex flex-col items-center justify-start px-4 py-5 gap-5">
+
                 <div className="w-full flex items-center justify-evenly">
+
                   <p className="text-3xl text-zinc-500 font-semibold">Total</p>
                   <p className="text-3xl text-orange-500 font-semibold flex items-center justify-center gap-1">
                     <HiCurrencyRupee className="text-primary" />
                     {total}
                   </p>
+                  
                 </div>
   
-                {/* <motion.button
+                <motion.button
                   {...buttonClick}
-                  className="bg-orange-400 w-[70%] px-4 py-3 text-xl text-headingColor font-semibold hover:bg-orange-500 drop-shadow-md rounded-2xl"
+                  className="bg-orange-400 w-[70%] px-4 py-3 text-xl text-red-600 font-semibold hover:bg-orange-500 drop-shadow-md rounded-2xl"
                   onClick={handleCheckOut}
                 >
                   Check Out
-                </motion.button> */}
+                </motion.button>
               </div>
             </>
           ) : (

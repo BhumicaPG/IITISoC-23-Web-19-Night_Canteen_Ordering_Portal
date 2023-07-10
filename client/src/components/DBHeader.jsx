@@ -25,6 +25,13 @@ import { app } from "../config/firebase.config"
 import { isActiveStyles, isNotActiveStyles } from "../utils/styles";
 import { setuserNull } from "../context/actions/userActions";
 
+import { alertInfo, alertWarning, alertDanger, alertNULL, alertSuccess} from "../context/actions/alertAction"
+
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
+
 
 const DBHeader = () => {
 
@@ -42,16 +49,32 @@ const DBHeader = () => {
         })
         .catch((err) => console.log(err));
     };
+
+    const handleClick = () => {
+        
+        //check kkra tha ki chal v rha hai ya nhi
+
+        // dispatch(alertSuccess("No New Notifications"))
+        // setTimeout(()=>{
+        //     dispatch(alertNULL())
+        //     }, 3000);
+        
+        toast.info('No New Notifications!', {
+            position: toast.POSITION.TOP_RIGHT,
+            autoClose: 2000,
+            pauseOnHover: false, // Disable pausing on hover
+          });
+    }
     
   return (
     <div className='w-full flex items-center justify-between gap-3'>
 
         {/* greetings and name display */}
 
-        <p className='text-2xl text-blue-700'>
-            Welcome to the Night Canteen
+        <p className='text-2xl text-gray-600'>
+            Welcome to the Night Bites
             {user?.name && (
-            <span className='block text-base text-blue-500'>{`Hello ${user?.name} ...!`}</span>
+            <span className='block text-base text-gray-800'>{`Hello ${user?.name} ...!`}</span>
             
             )}
         </p>
@@ -59,14 +82,15 @@ const DBHeader = () => {
         <div className="flex items-center justify-center gap-4">
             <div className='flex justify-center items-center gap-3 px-4 py-2 bg-slate-100 backdrop-blur-md rounded-md shadow-lg'>
                 <IoSearch className='text-grey-700 text-2xl'/>
-                <input type="text"  placeholder='search here' className='border-none outline-none bg-transparent w-32 text-base font-semibold text-green-300'/>
+                <input type="text"  placeholder='search here' className='border-none outline-none bg-transparent w-32 text-base font-semibold text-red-600'/>
                 <BsToggleOn className='text-grey-700 text-2xl'/>
                 <BsToggleOff className='text-grey-700 text-2xl'/>
             </div>
             <motion.div 
                 {...buttonClick}
                 className="w-10 h-10 rounded-md cursor-pointer bg-red-500 backdrop-blur-md shadow-md flex items-center justify-center">
-                <AiFillBell className="text-red-200 text-xl"/>
+                <AiFillBell className="text-red-200 text-xl" onClick={handleClick}/>
+                <ToastContainer />
             </motion.div>
 
             <div className="flex items-center justify-center gap-2">

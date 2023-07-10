@@ -12,7 +12,7 @@ import DBUsers from "./DBUsers"
 
 const DBRightSection = () => {
   return (
-    <div className='flex flex-col py-12 h-full flex-1 px-12'>
+    <div className='flex flex-col py-12 h-full flex-1 px-12 bg-gray-100'>
       <DBHeader/>
       <div className="flex flex-col flex-1 overflow-y-scroll scrollbar-none">
         <Routes>
