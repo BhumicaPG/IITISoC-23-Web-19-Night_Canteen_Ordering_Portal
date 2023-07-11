@@ -135,6 +135,9 @@ const Cart =() => {
           console.log(res);
           // window.alert("Order Placed Successfully");
           // console.log("yesssssss axios k andar v process aagya hai")
+          if (res.data.url) {
+            window.location.href = res.data.url;
+          }
         })
         .catch((err) => console.log(err));
     };

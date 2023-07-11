@@ -16,11 +16,11 @@ const CheckOutSuccess = () => {
             <img src="https://opengeekslab.com/wp-content/uploads/2021/10/What-Is-a-Payment-Gateway-How-Does-It-Function.png" className='w-full md:w-656' alt="background image" />
             <h1 className='text-[50px] text-green-400 font-bold'>Amount Paid Successfully</h1>
 
-            <motion.button {...buttonClick} >
+            <motion.div {...buttonClick} >
                 <NavLink to={"/"} className='flex items-center justify-center gap-4 cursor-pointer text-2xl text-red-400 font-semibold px-4 py-2 rounded-md border border-gray-300 hover:shadow-md'>
                     Continue Shopping/Home
                 </NavLink>
-            </motion.button>
+            </motion.div>
         </div>
     </main>
   )
