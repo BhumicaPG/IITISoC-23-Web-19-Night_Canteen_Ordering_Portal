@@ -222,9 +222,9 @@ router.post("/addToCart/:userId", async (req, res) => {
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
-      // phone_number_collection: {
-      //   enabled: true,
-      // },
+      phone_number_collection: {
+        enabled: true,
+      },
       line_items,
       customer: customer.id,
       mode: 'payment',
@@ -266,13 +266,11 @@ router.post("/addToCart/:userId", async (req, res) => {
     if (eventType === 'checkout.session.completed') {
       // console.log(data)
       // console.log("Payment was successful.");
-      stripe.customers.retrieve(data.customer, function(err, customer) {
-        // console.log("customer's data", customer);
+      stripe.customers.retrieve(data.customer).then((customer) => {
+        // console.log("Customer details", customer);
         // console.log("Data", data);
         createOrder(customer, data, res);
-      }
-      );
-      
+      });
     }
 
     // switch (event.type) {
@@ -334,12 +332,48 @@ router.post("/addToCart/:userId", async (req, res) => {
         .collection("cartItems")
         .doc(`/${userId}/`)
         .collection("items")
-        .doc(`/${data.productId}/`)
+        .doc(`/${data.product_id}/`)
         .delete()
         .then(() => console.log("-------------------successs--------"));
     });
   };
   
+
+// orders
+router.get("/orders", async (req, res) => {
+  (async () => {
+    try {
+      let query = db.collection("orders");
+      let response = [];
+      await query.get().then((querysnap) => {
+        let docs = querysnap.docs;
+        docs.map((doc) => {
+          response.push({ ...doc.data() });
+        });
+        return response;
+      });
+      return res.status(200).send({ success: true, data: response });
+    } catch (err) {
+      return res.send({ success: false, msg: `Error :${err}` });
+    }
+  })();
+});
+
+// update the order status
+router.post("/updateOrder/:orderId", async (req, res) => {
+  const orderId = req.params.orderId;
+  const sts = req.query.sts;
+
+  try {
+    const updatedItem = await db
+      .collection("orders")
+      .doc(`/${orderId}/`)
+      .update({ sts });
+    return res.status(200).send({ success: true, data: updatedItem });
+  } catch (er) {
+    return res.send({ success: false, msg: `Error :,${er}` });
+  }
+});
 
 
 module.exports = router;
