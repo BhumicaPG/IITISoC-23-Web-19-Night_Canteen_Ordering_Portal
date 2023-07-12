@@ -1,17 +1,36 @@
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { IoFastFood } from "react-icons/io5";
-import { useSelector } from "react-redux";
+import { useSelector , useDispatch} from "react-redux";
 // import { staggerFadeInOut } from "../animations";
 import { statuses } from "../utils/styles";
 import SliderCard from "./SliderCard";
 import FilterSection from "./FilterSection";
 import {Footer, Header, Slider} from "../components";
 import {Cart} from "../components";
+import { getAllProducts } from '../api';
+import { setAllProducts } from '../context/actions/productActions';
+
 
 
 const MenuPage = () => {
     const isCart = useSelector((state) => state.isCart);
+    const products=useSelector((state)=>state.products);
+    const dispatch=useDispatch();
+
+    useEffect(()=>{
+        // console.log("hello")
+        if(!products){
+          getAllProducts().then((data)=>{
+            console.log("newwwwwwwwwwww data : ")
+            console.log(data);
+    
+            console.log("new dispatch hora hai : ")
+            dispatch(setAllProducts(data));
+            console.log("new dispatch hogya hai")
+          });
+        }
+      }, []);
   return (
     <>
         <div className="w-full min-h-screen flex items-center justify-start flex-col"
