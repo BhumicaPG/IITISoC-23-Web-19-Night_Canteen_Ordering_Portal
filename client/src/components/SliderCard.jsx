@@ -36,7 +36,7 @@ const SliderCard =({ data, index }) => {
     };
   
         return(
-            <div className='bg-blend-overlay hover:drop-shadow-lg backdrop-blur-md rounded-xl border border-gray-400 flex items-center justify-between relative px-4 py-2 w-full md:w-340 md:min-w-350 gap-3'>
+            <div className='bg-blend-overlay hover:drop-shadow-lg backdrop-blur-md rounded-xl border border-gray-400 flex items-center justify-between relative px-2 py-2 w-full md:w-340 md:min-w-350 gap-3'>
 
                 <img src={data.imageURL} className="w-40 h-40 object-contain" alt="" />
 
@@ -47,7 +47,7 @@ const SliderCard =({ data, index }) => {
                         {data.product_name}
                         {/* Chicken Biryani */}
                     </p>
-                    <p className='text-lg font-semibold text-red-500 flex items-center justify-center gap-1'>
+                    <p className='text-lg font-semibold text-red-500 flex items-center justify-end gap-1'>
 
                     <HiCurrencyRupee className="text-red-500" />{" "}
                      {parseFloat(data.product_price).toFixed(2)}

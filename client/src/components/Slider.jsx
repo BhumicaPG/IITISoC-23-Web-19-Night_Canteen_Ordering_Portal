@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
-import "../assets/css/swiperStyles.css";
+import "../assets/css/slider.css";
 import "swiper/css/bundle";
 import { useSelector } from 'react-redux';
 
@@ -26,13 +26,16 @@ const Slider = () => {
                 // modules={[Pagination]}
                 className="mySwiper"
             >
+                <div className=" w-full flex items-center justify-evenly flex-wrap gap-2 mt-4 ">
                 {fruits && 
                     fruits.map((data, i) => (
-                    <SwiperSlide key={i}>
+                    // <SwiperSlide key={i}>
                     <SliderCard key = {i} data={data} index={i} />
-                    </SwiperSlide> 
+                    // </SwiperSlide> 
                 ))}
+                </div>
 
+                
                 {/* comment from here */}
                 {/* <SwiperSlide>
                     <SliderCard />
@@ -47,6 +50,7 @@ const Slider = () => {
                 {/* till here */}
 
             </Swiper>
+        
 
         </div>
 };

@@ -20,7 +20,7 @@ const FilterSection=() => {
                         </div>
                 </div>
 
-                <div className="w-full overflow-x-scroll pt-6 flex items-center justify-center gap-6 py-8">
+                <div className="w-full overflow-x-auto pt-6 flex  items-center justify-center gap-6 py-8">
                     {statuses &&
                     statuses.map((data, i) => (
                         <FilterCard

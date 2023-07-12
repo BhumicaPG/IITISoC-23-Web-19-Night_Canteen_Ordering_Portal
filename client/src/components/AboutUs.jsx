@@ -15,12 +15,12 @@ const AboutUs = () => {
             </div>
 
             
-            <div className="w-full pt-6 flex items-center justify-center gap-6 py-8">
+            <div className="w-full pt-6 flex items-center justify-center gap-6 py-6">
             <section class="mb-6">
                 <div class="flex flex-wrap">
                     <div class="mb-12 w-full shrink-0 grow-0 basis-auto lg:mb-0 lg:w-5/12">
                         <div class="flex lg:py-12">
-                            <img src="https://source.unsplash.com/1600x900/?junkfood"
+                            <img src="https://source.unsplash.com/1600x900/?junk+food"
                                 class="bg-blend-overlay hover:drop-shadow-lg backdrop-blur-md flex z-[10] w-full rounded-lg shadow-lg dark:shadow-black/20 lg:ml-[50px]" alt="image" />
                         </div>
                     </div>
