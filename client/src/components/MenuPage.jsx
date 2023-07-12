@@ -8,7 +8,8 @@ import SliderCard from "./SliderCard";
 import FilterSection from "./FilterSection";
 import {Footer, Header, Slider} from "../components";
 import {Cart} from "../components";
-
+import { getAllProducts } from '../api';
+import { setAllProducts } from '../context/actions/productActions';
 
 
 
