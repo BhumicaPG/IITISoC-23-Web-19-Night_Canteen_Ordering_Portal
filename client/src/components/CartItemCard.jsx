@@ -61,7 +61,7 @@ export const CartItemCard = (param) => {
     <motion.div 
     className="w-full flex items-center justify-start bg-zinc-800 rounded-md drop-shadow-md px-4 gap-4">
         <img
-          src={data.imageURL}
+          src={data?.imageURL}
           className=" w-24 min-w-[94px] h-24 object-contain"
           alt="pic"
         />

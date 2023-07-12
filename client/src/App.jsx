@@ -13,11 +13,15 @@ import { getAllCartItems, validateUserJWTToken} from "./api";
 import { setUserDetails } from "./context/actions/userActions";
 // import { fadeInOut } from "./animations";
 
+// import { CircleLoader } from "re";
+import { PropagateLoader, HashLoader } from "react-spinners";
+
 import { useDispatch, useSelector } from "react-redux";
 // import {CirclePopLoader} from "react-loaders-kit"
 import { Alert } from "./components/index"
 import DashBoard from "./containers/DashBoard"
 import { setCartItems } from "./context/actions/cartAction";
+import CheckOutSuccess from "./components/CheckOutSuccess";
 
 
 // export default function App(){
@@ -84,14 +88,17 @@ export default function App() {
         <motion.div 
         {...fadeInOut} 
         className ="fixed z-50 inset-0 bg-lightOverlay backdrop-blur-md flex items-center justify-center w-full">
-        loading....
+        {/* <PropagateLoader color="#f2f2f2" /> */}
+        <HashLoader color="#cf4141" />
         </motion.div>
+        
       )}
       <Routes>
           <Route path="/*" element={<Main />} />
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard/*" element={<DashBoard />} />
           <Route path="/menu" element={<MenuPage />} />
+          <Route path="/checkout-success" element={<CheckOutSuccess />} />
       </Routes>
 
       {alert?.type && <Alert type={alert?.type} message={alert?.message} />}

@@ -86,7 +86,8 @@ const Header = () => {
                     </NavLink>
 
                 </ul>
-
+                
+                {/* cart */}
                 <motion.div 
                     {...buttonClick} 
                     onClick={() => dispatch(setCartOn())}

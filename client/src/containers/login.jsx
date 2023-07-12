@@ -17,7 +17,7 @@ import {app} from "../config/firebase.config"
 import { validateUserJWTToken } from "../api"
 import { useDispatch, useSelector } from "react-redux";
 import {useNavigate} from "react-router-dom";
-import { alertInfo, alertWarning } from "../context/actions/alertAction"
+import { alertInfo, alertWarning, alertNULL } from "../context/actions/alertAction"
 import { setUserDetails } from "../context/actions/userActions";
 
 
@@ -132,7 +132,7 @@ export default function login(){
         <img src="https://img.freepik.com/premium-vector/oktoberfest-2022-beer-festival-hand-drawn-doodle-elements-german-traditional-holiday-octoberfest-craft-beer-blue-white-rhombus-set-elements_550168-413.jpg?w=900" alt="picture"  className="w-full h-full object-cover absolute top-0 left-0"/>
 
         
-        <div className="flex flex-col items-center bg-cardOverlay opacity-70 w-[40%] h-full md: w-508 h-full z-50 backdrop-blur-md p-4 px-4 py-12 gap-6">
+        <div className="flex flex-col items-center bg-cardOverlay opacity-60 w-[40%] h-full md: w-508 h-full z-50 backdrop-blur-md p-4 px-4 py-12 gap-6">
             {/* logo-section */}
             <div className="flex items-center justify-start gap-4 w-full">
             <img src="https://img.freepik.com/premium-vector/pizza-logo-template-suitable-restaurant-cafe-logo-restaurant-food-delivery-service_279597-968.jpg?w=740" alt="logo" className=" w-10" />
