@@ -26,7 +26,7 @@ const Slider = () => {
                 // modules={[Pagination]}
                 className="mySwiper"
             >
-                <div className=" w-full flex items-center justify-evenly flex-wrap gap-2 mt-4 ">
+                <div className=" w-full flex items-center justify-evenly flex-wrap gap-4 mt-4 ">
                 {fruits && 
                     fruits.map((data, i) => (
                     // <SwiperSlide key={i}>
@@ -34,24 +34,7 @@ const Slider = () => {
                     // </SwiperSlide> 
                 ))}
                 </div>
-
-                
-                {/* comment from here */}
-                {/* <SwiperSlide>
-                    <SliderCard />
-                </SwiperSlide>
-                <SwiperSlide><SliderCard /></SwiperSlide>
-                <SwiperSlide><SliderCard /></SwiperSlide>
-                <SwiperSlide><SliderCard /></SwiperSlide>
-                <SwiperSlide><SliderCard /></SwiperSlide>
-                <SwiperSlide><SliderCard /></SwiperSlide>
-                <SwiperSlide><SliderCard /></SwiperSlide>
-                <SwiperSlide><SliderCard /></SwiperSlide> */}
-                {/* till here */}
-
             </Swiper>
-        
-
         </div>
 };
 

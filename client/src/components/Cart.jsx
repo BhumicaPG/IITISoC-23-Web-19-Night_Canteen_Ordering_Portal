@@ -200,7 +200,7 @@ const Cart =() => {
             </>
           ) : (
             <>
-              <h1 className="text-3xl text-primary indent-8 font-bold">Your cart is empty !!</h1>
+              <h1 className="text-3xl text-primary indent-8 font-bold ">Your cart is empty !!</h1>
             </>
           )}
         </div>

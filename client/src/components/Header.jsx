@@ -70,7 +70,7 @@ const Header = () => {
                         className={({ isActive }) =>
                             isActive ? isActiveStyles : isNotActiveStyles
                         }
-                        to={"/services"}
+                        to={"/Services"}
                     >
                         Services
                     </NavLink>

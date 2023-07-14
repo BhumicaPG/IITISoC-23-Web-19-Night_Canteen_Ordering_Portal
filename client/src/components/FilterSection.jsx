@@ -7,10 +7,10 @@ import { statuses } from "../utils/styles";
 import SliderCard from "./SliderCard";
 
 const FilterSection=() => {
-    const [category, setCategory] = useState("fruits");
+    const [category, setCategory] = useState("nonveg");
     const products = useSelector((state) => state.products);
         return (
-            <motion.div className="w-full flex items-start justify-start flex-col px-12 ms:px-20">
+            <motion.div className="w-full flex items-start justify-center flex-col px-12 ms:px-20">
                 <div className='w-full flex items-center justify-between'>
                         <div className='flex flex-col items-start justify-start gap-1'>
                                 <p className='text-2xl text-headingColor font-bold'>
@@ -20,7 +20,7 @@ const FilterSection=() => {
                         </div>
                 </div>
 
-                <div className="w-full overflow-x-auto pt-6 flex  items-center justify-center gap-6 py-8">
+                <div className="w-full overflow-x-auto flex items-start justify-center pt-6 gap-6 py-8">
                     {statuses &&
                     statuses.map((data, i) => (
                         <FilterCard

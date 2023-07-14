@@ -40,7 +40,7 @@ const MenuPage = () => {
         backgroundPosition: "center"}}>
             
             <Header/>
-            <div className="flex flex-col gap-12 mt-28 pb-12">
+            <div className="w-full flex flex-col items-start justify-center gap-12 mt-32 pb-12">
                 <motion.div className="w-full flex items-start justify-center flex-col px-12 ms:px-20">
                     <div className='w-full flex items-center justify-between'>
                         <div className='flex flex-col items-start justify-start gap-1'>
@@ -55,6 +55,8 @@ const MenuPage = () => {
                 <FilterSection/>
 
             </div>
+                {isCart && <Cart /> }
+                <Footer/>
         </div>
     </>
 
