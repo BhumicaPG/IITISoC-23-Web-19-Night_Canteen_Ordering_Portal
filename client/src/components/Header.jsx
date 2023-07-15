@@ -16,6 +16,9 @@ import { isActiveStyles, isNotActiveStyles } from "../utils/styles";
 import { setuserNull } from "../context/actions/userActions";
 import { setCartOn } from "../context/actions/displayCartAction";
 
+// Import dotenv
+// import dotenv from 'dotenv';
+// dotenv.config(); // Load environment variables
 
 const Header = () => {
     const user = useSelector((state) => state.user);
@@ -25,6 +28,8 @@ const Header = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
+    const adminId = JSON.parse(import.meta.env.VITE_APP_ADMIN_ID);
+    
     const signOut = () => {
         firebaseAuth.signOut()
         .then(() => {
@@ -33,6 +38,8 @@ const Header = () => {
         })
         .catch((err) => console.log(err));
     };
+    // console.log("current user ki userid", user?.user_id)
+    // console.log("if wali condition" , user?.user_id && adminId.includes(user?.user_id))
 
 
     return (
@@ -119,14 +126,19 @@ const Header = () => {
                             <motion.div 
                             {...slideTop}
                             onMouseLeave={() => setIsMenu(false)} 
-                            className="px-6 py-4 w-48 bg-blend-lightOverlay backdrop-blur-3xl rounded-md shadow-md absolute top-12 right-0 flex flex-col gap-4">
-                            
-                            {/* dashboard */}
-                            <Link className="hover:text-red-500 text-xl text-white"
-                            to={"/dashboard/home"}
+                            className="px-6 py-4 w-48 bg-blend-lightOverlay backdrop-blur-3xl rounded-md shadow-md absolute top-12 right-0 flex flex-col gap-4"
                             >
-                                Dashboard
-                            </Link>
+                            
+                            {user?.user_id && adminId.includes(user?.user_id) &&(
+                                // {/* dashboard */}
+                                
+                                <Link 
+                                    className="hover:text-red-500 text-xl text-white"
+                                to={"/dashboard/home"}>
+                                    Dashboard
+                                </Link>
+                            )}
+
 
                             {/* My Profile */}
                             <Link className="hover:text-red-500 text-xl text-white"

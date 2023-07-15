@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import {Cart, FilterSection, Header, Home, HomeSlider, Gallery, Review, AboutUs, Testimonial, Footer} from "../components";
+import {Cart, FilterSection, Header, Home, HomeSlider, Gallery, Review, AboutUs, Testimonial, Footer, Services} from "../components";
 // import slider from "../assets/img/burger.jpg"
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllProducts } from "../api"
@@ -28,6 +28,7 @@ const Main = () => {
         <Home />
         <HomeSlider />
         <AboutUs />
+        {/* <Services /> */}
         {/* <FilterSection /> */}
         <Gallery />
         <Testimonial /> 

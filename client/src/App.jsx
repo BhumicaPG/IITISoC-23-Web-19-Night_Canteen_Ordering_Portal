@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import Login from "./containers/login"
 import Main from "./containers/Main"
 import MenuPage from "./components/MenuPage"
+import Services from "./components/Services";
 import { app } from "./config/firebase.config";
 import React, { useEffect, useState } from "react";
 import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth"
@@ -18,7 +19,7 @@ import { PropagateLoader, HashLoader } from "react-spinners";
 
 import { useDispatch, useSelector } from "react-redux";
 // import {CirclePopLoader} from "react-loaders-kit"
-import { Alert } from "./components/index"
+import { Alert, UsersOrders } from "./components/index"
 import DashBoard from "./containers/DashBoard"
 import { setCartItems } from "./context/actions/cartAction";
 import CheckOutSuccess from "./components/CheckOutSuccess";
@@ -99,6 +100,9 @@ export default function App() {
           <Route path="/dashboard/*" element={<DashBoard />} />
           <Route path="/menu" element={<MenuPage />} />
           <Route path="/checkout-success" element={<CheckOutSuccess />} />
+          <Route path="/orders" element={<UsersOrders />} />
+          <Route path="/Services" element={<Services />} />
+
       </Routes>
 
       {alert?.type && <Alert type={alert?.type} message={alert?.message} />}

@@ -19,6 +19,9 @@ const DBUsers = () => {
         dispatch(setAllUserDetails(data));
         console.log("after dispatch")
         console.log(setAllUserDetails(data))
+      }).catch((error) => {
+        // Handle the error, e.g., show an error message or log the error
+        console.error(error);
       });
     }
     console.log("ggggggggggg")
@@ -30,8 +33,8 @@ const DBUsers = () => {
       <DataTable
 
       // hello
-        data={allUsers}
-        title="List of Users"
+        // data={allUsers}
+        // title="List of Users"
         columns={[
           {
             title: "Image",
@@ -67,6 +70,8 @@ const DBUsers = () => {
           },
 
         ]}
+        data={allUsers}
+        title="List of Users"
 
       />
     </div>

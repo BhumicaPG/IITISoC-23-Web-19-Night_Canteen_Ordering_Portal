@@ -16,47 +16,47 @@ const AboutUs = () => {
 
             
             <div className="w-full pt-6 flex items-center justify-center gap-6 py-6">
-            <section class="mb-6">
-                <div class="flex flex-wrap">
-                    <div class="mb-12 w-full shrink-0 grow-0 basis-auto lg:mb-0 lg:w-5/12">
-                        <div class="flex lg:py-12">
+            <section className="mb-6">
+                <div className="flex flex-wrap">
+                    <div className="mb-12 w-full shrink-0 grow-0 basis-auto lg:mb-0 lg:w-5/12">
+                        <div className="flex lg:py-12">
                             <img src="https://source.unsplash.com/1600x900/?junk+food"
-                                class="bg-blend-overlay hover:drop-shadow-lg backdrop-blur-md flex z-[10] w-full rounded-lg shadow-lg dark:shadow-black/20 lg:ml-[50px]" alt="image" />
+                                className="bg-blend-overlay hover:drop-shadow-lg backdrop-blur-md flex z-[10] w-full rounded-lg shadow-lg dark:shadow-black/20 lg:ml-[50px]" alt="image" />
                         </div>
                     </div>
 
-                    <div class="w-full shrink-0 grow-0 basis-auto lg:w-7/12">
+                    <div className="w-full shrink-0 grow-0 basis-auto lg:w-7/12">
                         <div
-                            class="bg-blend-overlay hover:drop-shadow-lg backdrop-blur-md bg-opacity-30 flex h-full items-center rounded-lg border border-gray-400 bg-white p-6 text-center text-slate-800 lg:pl-12 lg:text-left">
-                            <div class="lg:pl-12">
-                                <h2 class="mb-8 text-3xl font-bold">Fuel Your Nocturnal Cravings</h2>
-                                <p class="mb-8 pb-2 lg:pb-0">
+                            className="bg-blend-overlay hover:drop-shadow-lg backdrop-blur-md bg-opacity-30 flex h-full items-center rounded-lg border border-gray-400 bg-white p-6 text-center text-slate-800 lg:pl-12 lg:text-left">
+                            <div className="lg:pl-12">
+                                <h2 className="mb-8 text-3xl font-bold">Fuel Your Nocturnal Cravings</h2>
+                                <p className="mb-8 pb-2 lg:pb-0">
                                 At Night Bites, we understand that hunger doesn't abide by traditional schedules. That's why we're here to satisfy your late-night cravings and provide an unforgettable dining experience when the moon is high and the city sleeps.
                                 </p>
 
-                                <div class="mx-auto mb-8 flex flex-col md:flex-row md:justify-around xl:justify-start">
-                                    <p class="mx-auto mb-4 flex items-center md:mx-0 md:mb-2 lg:mb-0 xl:mr-20">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                                            stroke="currentColor" class="mr-2 h-5 w-5">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                <div className="mx-auto mb-8 flex flex-col md:flex-row md:justify-around xl:justify-start">
+                                    <p className="mx-auto mb-4 flex items-center md:mx-0 md:mb-2 lg:mb-0 xl:mr-20">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2"
+                                            stroke="currentColor" className="mr-2 h-5 w-5">
+                                            <path strokeLinecap="round" strokeLinejoin="round"
                                                 d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         </svg>
                                         Best chef
                                     </p>
 
-                                    <p class="mx-auto mb-4 flex items-center md:mx-0 md:mb-2 lg:mb-0 xl:mr-20">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                                            stroke="currentColor" class="mr-2 h-5 w-5">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                    <p className="mx-auto mb-4 flex items-center md:mx-0 md:mb-2 lg:mb-0 xl:mr-20">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2"
+                                            stroke="currentColor" className="mr-2 h-5 w-5">
+                                            <path strokeLinecap="round" strokeLinejoin="round"
                                                 d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         </svg>
                                         Best quality
                                     </p>
 
-                                    <p class="mx-auto mb-2 flex items-center md:mx-0 lg:mb-0">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                                            stroke="currentColor" class="mr-2 h-5 w-5">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                    <p className="mx-auto mb-2 flex items-center md:mx-0 lg:mb-0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2"
+                                            stroke="currentColor" className="mr-2 h-5 w-5">
+                                            <path strokeLinecap="round" strokeLinejoin="round"
                                                 d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         </svg>
                                         Best experience

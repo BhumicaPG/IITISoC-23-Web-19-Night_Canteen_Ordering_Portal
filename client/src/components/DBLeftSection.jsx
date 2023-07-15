@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { isActiveStyles, isNtActiveStyles } from "../utils/styles";
+import logo from "../assets/img/logoblack.png";
 
 const DBLeftSection = () => {
   return (
@@ -9,7 +10,7 @@ const DBLeftSection = () => {
       
       <NavLink to={"/"} className="flex items-center justify-start gap-4">
         {/* <img src='../assests/img/headerlogo' alt="logo" className="w-20 items-center px-2"/> */}
-        <img src='https://o.remove.bg/downloads/136f804a-fe3e-477b-a4a3-4ae46a11d3f1/logoNew-removebg-preview.png' alt="logo" className="w-20 items-center px-2" />
+        <img src={logo} alt="logo" className="w-20 items-center px-2" />
         <p className='font-semibold text-2xl'>Night Bites</p> 
       </NavLink>
 
