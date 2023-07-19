@@ -15,7 +15,8 @@ import { setUserDetails } from "./context/actions/userActions";
 // import { fadeInOut } from "./animations";
 
 // import { CircleLoader } from "re";
-import { PropagateLoader, HashLoader } from "react-spinners";
+// import { PropagateLoader} from "react-spinners";
+import {HashLoader} from "react-spinners"
 
 import { useDispatch, useSelector } from "react-redux";
 // import {CirclePopLoader} from "react-loaders-kit"
@@ -23,6 +24,8 @@ import { Alert, UsersOrders } from "./components/index"
 import DashBoard from "./containers/DashBoard"
 import { setCartItems } from "./context/actions/cartAction";
 import CheckOutSuccess from "./components/CheckOutSuccess";
+
+import Profile from "./components/Profile";
 
 
 // export default function App(){
@@ -102,6 +105,7 @@ export default function App() {
           <Route path="/checkout-success" element={<CheckOutSuccess />} />
           <Route path="/orders" element={<UsersOrders />} />
           <Route path="/Services" element={<Services />} />
+          <Route path="/profile" element={<Profile />} />
 
       </Routes>
 

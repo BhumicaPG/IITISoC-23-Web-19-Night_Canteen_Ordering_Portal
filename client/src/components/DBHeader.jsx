@@ -86,13 +86,16 @@ const DBHeader = () => {
                 <BsToggleOn className='text-grey-700 text-2xl'/>
                 <BsToggleOff className='text-grey-700 text-2xl'/>
             </div>
+
+            {/* bell icon */}
             <motion.div 
                 {...buttonClick}
                 className="w-10 h-10 rounded-md cursor-pointer bg-red-500 backdrop-blur-md shadow-md flex items-center justify-center">
                 <AiFillBell className="text-red-200 text-xl" onClick={handleClick}/>
                 <ToastContainer />
             </motion.div>
-
+            
+            {/* user avatar */}
             <div className="flex items-center justify-center gap-2">
                 
                 <div className="w-10 h-10 rounded-md shadow-lg cursor-pointer overflow-hidden">

@@ -10,7 +10,7 @@ const DBUsers = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("usersssssss")
+    console.log("userssssss")
     console.log(allUsers)
     if (!allUsers) {
       getAllUsers().then((data) => {

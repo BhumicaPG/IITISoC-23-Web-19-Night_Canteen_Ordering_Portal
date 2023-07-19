@@ -26,8 +26,13 @@ const UsersOrders = () => {
     }, [orders]);
 
     return (
-        <main className='w-screen min-h-screen flex items-center justify-start flex-col bg-slate-200'>
-
+        <main className='w-screen min-h-screen flex items-center justify-start flex-col bg-slate-200' 
+            style={{backgroundImage : `url(https://img.freepik.com/premium-vector/leaves-natural-colours_24381-1923.jpg)`, 
+            // style={{backgroundImage : `url(https://img.freepik.com/premium-vector/different-web-interface-color-doodle-silhouettes-seamless-pattern_95169-2647.jpg?w=740)`, 
+            backgroundSize: "cover",
+            backgroundRepeat : "no-repeat", 
+            backgroundPosition: "center"}}
+        >
             <Header />
             <div className='w-full flex flex-col items-start justify-center mt-40 px-6 md:px-24 2xl:px-96  pb-12 gap-12'>
                 

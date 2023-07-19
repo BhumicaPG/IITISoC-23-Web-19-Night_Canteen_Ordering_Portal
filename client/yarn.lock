@@ -1563,12 +1563,6 @@
 "@emotion/weak-memoize@0.2.5":
   version "0.2.5"
 
-"@esbuild/linux-x64@0.17.19":
-  version "0.17.19"
-
-"@esbuild/linux-x64@0.18.3":
-  version "0.18.3"
-
 "@eslint-community/eslint-utils@^4.2.0":
   version "4.4.0"
   dependencies:
@@ -5148,12 +5142,6 @@ chokidar@^2.1.8, chokidar@^3.3.0, chokidar@^3.4.0, chokidar@^3.4.2, chokidar@^3.
     readdirp "~3.6.0"
   optionalDependencies:
     fsevents "~2.3.2"
-
-"chokidar2@file:./chokidar2":
-  version "2.0.0"
-  resolved "file:node_modules/watchpack/chokidar2"
-  dependencies:
-    chokidar "^2.1.8"
 
 chownr@^1.1.1, chownr@^1.1.2:
   version "1.1.4"
@@ -13157,6 +13145,11 @@ react-scripts@3.4.0:
     workbox-webpack-plugin "4.3.1"
   optionalDependencies:
     fsevents "2.1.2"
+
+react-spinner@^0.2.7:
+  version "0.2.7"
+  resolved "https://registry.npmjs.org/react-spinner/-/react-spinner-0.2.7.tgz"
+  integrity sha512-9bIDWGIumXpM7xcas/qpikRZp7AGP1uehgxwTTj/5DL6SwWHMTLfuioYgX7bdeMgOiVEMvOgLyXU3fYKQc16IA==
 
 react-spinners@^0.13.8:
   version "0.13.8"

@@ -9,6 +9,7 @@ import { buttonClick } from '../animations';
 import { getAllProducts } from '../api';
 import { setAllProducts } from '../context/actions/productActions';
 import { useSelector, useDispatch } from 'react-redux'
+import { setCartOn } from "../context/actions/displayCartAction";
 
 // class Home = () => {
 
@@ -72,7 +73,7 @@ export default function Home(){
                     {/* Main page Text end */}
                     
 
-                    <motion.button {...buttonClick} className='bg-gradient-to-bl from-orange-400 to-orange-600 px-4 py-2 rounded-xl text-black text-base font-semibold float-right'>
+                    <motion.button {...buttonClick} className='bg-gradient-to-bl from-orange-400 to-orange-600 px-4 py-2 rounded-xl text-black text-base font-semibold float-right'  onClick={() => dispatch(setCartOn())}>
                         Order Now
                     </motion.button>
                 </div>
