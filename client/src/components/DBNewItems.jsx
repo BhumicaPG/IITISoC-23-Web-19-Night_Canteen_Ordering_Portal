@@ -218,7 +218,6 @@ const DBNewitems = () => {
 
 
       </div>
-      
     </div>
   )
 }

@@ -132,14 +132,14 @@ const Cart =() => {
           // if (res.data.url) {
           //   window.location.href = res.data.url;
           // }
-          console.log(res);
+          // console.log(res);
           // window.alert("Order Placed Successfully");
           // console.log("yesssssss axios k andar v process aagya hai")
           if (res.data.url) {
             window.location.href = res.data.url;
           }
         })
-        .catch((err) => console.log(err));
+        .catch((err) => console.log("errrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"));
     };
   
     return (
@@ -200,7 +200,7 @@ const Cart =() => {
             </>
           ) : (
             <>
-              <h1 className="text-3xl text-primary indent-8 font-bold ">Your cart is empty !!</h1>
+              <h1 className="text-3xl text-primary indent-8 font-bold">Your cart is empty !!</h1>
             </>
           )}
         </div>
