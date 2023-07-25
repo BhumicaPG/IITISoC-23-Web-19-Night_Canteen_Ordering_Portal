@@ -16,8 +16,9 @@ export default function LoginInput({placeholder, icon, inputState, inputStateFun
             <input 
                 type={type} 
                 placeholder={placeholder} 
-                className="w-full h-full bg-transparent text-black text-lg font-semibold  border-none outline-none"
+                className="w-full h-full bg-transparent text-black text-lg font-semibold  border-none outline-none placeholder-gray-200"
                 value={inputState}
+
 
                 // to save the state into our database
                 onChange={(e)=>inputStateFunc(e.target.value)}

@@ -124,9 +124,11 @@ const Header = () => {
 
                         {isMenu && (
                             <motion.div 
-                            {...slideTop}
-                            onMouseLeave={() => setIsMenu(false)} 
-                            className="px-6 py-4 w-48 bg-blend-lightOverlay backdrop-blur-3xl rounded-md shadow-md absolute top-12 right-0 flex flex-col gap-4"
+                                {...slideTop}
+                                onMouseLeave={() => setIsMenu(false)} 
+                                // className="px-6 py-4 w-48 bg-blend-lightOverlay backdrop-blur-3xl rounded-md shadow-md absolute top-12 right-0 flex flex-col gap-4"
+                                className="px-6 py-4 w-48 bg-[rgba(0,0,0,0.5)] backdrop-blur-3xl rounded-md shadow-md absolute top-12 right-0 flex flex-col gap-4"
+                                
                             >
                             
                             {user?.user_id && adminId.includes(user?.user_id) &&(
@@ -134,8 +136,9 @@ const Header = () => {
                                 
                                 <Link 
                                     className="hover:text-red-500 text-xl text-white"
-                                to={"/dashboard/home"}>
-                                    Dashboard
+                                    to={"/dashboard/home"}
+                                >
+                                Dashboard
                                 </Link>
                             )}
 

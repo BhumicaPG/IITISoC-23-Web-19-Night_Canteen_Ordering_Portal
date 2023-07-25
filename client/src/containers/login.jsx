@@ -136,12 +136,12 @@ export default function login(){
             {/* logo-section */}
             <div className="flex items-center justify-start gap-4 w-full">
             <img src="https://img.freepik.com/premium-vector/pizza-logo-template-suitable-restaurant-cafe-logo-restaurant-food-delivery-service_279597-968.jpg?w=740" alt="logo" className=" w-10" />
-                <p className="text-white font-semibold">Night Canteen Services</p>
+                <p className="text-white font-semibold">Night Bites</p>
             </div>
 
             {/* welcome text */}
             <p className="text-3xl font-bold text-white">Welcome Back!</p>
-            <p className="text-xl text-textColor -mt-6">{userisSignUp ? "Sign Up" : "Sign In"} with the following</p>
+            <p className="text-xl text-gray-300 -mt-6">{userisSignUp ? "Sign Up" : "Sign In"} with the following</p>
 
             {/* input section */}
             <div className="flex flex-col items-center justify-center gap-6 px-4 md: px-12 py-4">
@@ -176,7 +176,7 @@ export default function login(){
 
 
                 {
-                    !userisSignUp ? <p>Doesn't have an account :   
+                    !userisSignUp ? <p>Doesn't have an account :    
                         <motion.button {...buttonClick} className="text-red-400 font-semibold underline cursor-pointer bg-transparent"
                             onClick={()=>{setuserisSignUp(true)}}
                         >Create One</motion.button></p> : 
@@ -211,15 +211,15 @@ export default function login(){
             </div>
 
             {
-                userisSignUp ? <motion.div {...buttonClick} className="flex item-center, justify-center px-20 py-2 bg-white-500 backdrop-blur-md cursor-pointer rounded-3xl gap-4"
+                userisSignUp ? <motion.div {...buttonClick} className="flex items-centre justify-center px-20 py-2 bg-white-500 backdrop-blur-md cursor-pointer rounded-3xl gap-4 mt-5"
                 onClick={loginUsingGoogle}>
-                <FcGoogle/>
+                <FcGoogle className="text-2xl" />
                 <p className="capitalize text-base text-white">Sign up with google</p>
                 </motion.div>  :   
 
                 <motion.div {...buttonClick} className="flex item-center, justify-center px-20 py-2 bg-white-500 backdrop-blur-md cursor-pointer rounded-3xl gap-4"
                 onClick={loginUsingGoogle}  >
-                <FcGoogle/>
+                <FcGoogle className="text-2xl" />
                 <p className="capitalize text-base text-white">Sign In with google</p>
                 </motion.div>
                 

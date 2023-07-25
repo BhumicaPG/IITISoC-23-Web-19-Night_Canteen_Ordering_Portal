@@ -62,18 +62,19 @@ const Profile = () => {
             <Header />
             <div className="flex flex-col justify-center items-center mt-40 relative z-10">
                 {/* profile pic */}
-                <div className="w-40 h-40 rounded-full shadow-md cursor-pointer overflow-hidden mt-5">
+                <div className="w-40 h-40 rounded-full shadow-md cursor-pointer overflow-hidden mt-5 relative">
                     <motion.img
                         className="w-full h-full object-cover"
                         src={user?.picture ? user?.picture : Avatar}
-                        whileHover={{ scale: 1.15 }}
+                        whileHover={{ scale: 1.05 }}
                         referrerPolicy="no-referrer"
                     />
+                    <div className="absolute top-0 left-0 w-full h-full border-4 border-white rounded-full pointer-events-none"></div>
                 </div>
 
                 {/* credentials */}
-                <h1 className="text-2xl font-bold text-white z-50 ">{user?.name}</h1>
-                <h1 className="text-xl font-semibold text-white z-50">{user?.email}</h1>
+                <h1 className="text-2xl font-bold text-red-500 z-50 ">{user?.name}</h1>
+                <h1 className="text-xl font-semibold text-red-500 z-50">{user?.email}</h1>
             </div>
             <Footer />
         </div>

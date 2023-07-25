@@ -49,16 +49,18 @@ const DBItems = () => {
             ),
           },
         ]}
+
         data={products}
         title="List of Products"
         actions={[
-          {
-            icon: "edit",
-            tooltip: "Edit Data",
-            onClick: (event, rowData) => {
-              alert("You want to edit " + rowData.product_id);
-            },
-          },
+          // {
+          //   icon: "edit",
+          //   tooltip: "Edit Data",
+          //   onClick: (event, rowData) => {
+          //     // alert("You want to edit " + rowData.product_id);
+
+          //   },
+          // },
           {
             icon: "delete",
             tooltip: "Delete Data",
