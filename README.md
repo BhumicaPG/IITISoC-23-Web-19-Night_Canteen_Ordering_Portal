@@ -29,8 +29,9 @@ To access Night Bites and start placing your orders, please follow these steps:
 1. Clone the GitHub repository: [Night Bites Repo](https://github.com/BhumicaPG/IITISoC-23-Web-19-Night_Canteen_Ordering_Portal)
 2. Set up Firebase project and configure Firebase Authentication and Realtime Database.
 3. Install the necessary dependencies by running `npm install` in the project directory.
-4. Run the development server using `npm run dev`.
-5. Access the Night Bites application through your browser.
+4. Run the development server using `npm run dev` in the client directory.
+5. Navigate to the server/functions folder in the project directory and run `npm run serve`.
+6. Access the Night Bites application through your browser.
 
 ## Conclusion
 
