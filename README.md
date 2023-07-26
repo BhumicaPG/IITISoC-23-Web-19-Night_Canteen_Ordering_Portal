@@ -4,6 +4,10 @@
 
 Welcome to Night Bites - the Night Canteen Management project! Night Bites is a web-based application designed to simplify the management and operations of a night canteen. Our primary goal is to create a user-friendly platform that allows customers to effortlessly place food orders while enabling canteen staff to efficiently handle those orders and manage inventory. The application provides real-time updates to both customers and staff regarding order status changes and available stock.
 
+
+https://github.com/BhumicaPG/IITISoC-23-Web-19-Night_Canteen_Ordering_Portal/assets/81583897/b68c953e-d6b5-4cc5-ba60-dfe3b970e46e
+
+
 ## Features
 
 ### 1. User Authentication
@@ -31,3 +35,9 @@ To access Night Bites and start placing your orders, please follow these steps:
 ## Conclusion
 
 The Night Bites project has been successfully completed, creating a seamless web-based application using React, Redux, and Firebase. Customers can now conveniently place food orders, while canteen staff can efficiently manage orders and inventory in real-time. The project demonstrates the effectiveness of these technologies in building dynamic and responsive applications.
+
+## Contributors
+
+1. Manisha Sahu [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/manisha-sahu-5575b9205/)
+
+2. Himanshu Gupta [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/himanshu-gupta-4a5942201/)
